@@ -1,0 +1,236 @@
+:root {
+  --primary: #00429b; /* navy */
+  --accent: #16a34a; /* green */
+  --bg: #f7f9fc;
+  --text: #1e293b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ---------- Header ---------- */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Navigation */
+nav {
+  margin-bottom: 2rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+header img {
+  max-width: 140px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+header h1 span {
+  color: var(--accent);
+}
+
+header p {
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Sections ---------- */
+section {
+  padding: 4rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+/* Services grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Contact button */
+a.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+a.button:hover {
+  background: #128c3b;
+}
+
+.contact {
+  text-align: center;
+}
+
+/* Logos container */
+.logos-container {
+  display: flex;
+  gap: 10px;
+  margin: 1rem 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logos-container img {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+/* List styling */
+ul {
+  padding-left: 2rem;
+  margin: 1rem 0;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+/* Paragraphs in sections */
+section p {
+  margin: 1rem 0;
+  text-align: left;
+}
+
+/* Testimonials styling */
+.testimonial-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+  border-left: 4px solid var(--accent);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-quote {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-company {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .logos-container {
+    gap: 8px;
+    margin: 0.75rem 0;
+  }
+  
+  .logos-container img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.875rem;
+  background: var(--primary);
+  color: #fff;
+}
+
+footer nav {
+  margin-top: 1rem;
+}
+
+footer nav a {
+  color: #fff;
+  margin: 0 1rem;
+}
+
+footer nav a:hover {
+  color: var(--accent);
+}
+
+/* Performance optimizations */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.logos-container img {
+  will-change: transform;
+}

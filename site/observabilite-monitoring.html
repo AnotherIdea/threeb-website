@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TD4YYM76QZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TD4YYM76QZ');
+    </script>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Observabilité & Monitoring | ThreeB - Prometheus Grafana ELK Aix-en-Provence</title>
+    <meta name="description" content="Expert Observabilité avec Prometheus, Grafana et stack ELK à Aix-en-Provence. Dashboards temps réel, alerting intelligent, analyse de performance. Consultation gratuite." />
+    <meta name="author" content="ThreeB SAS" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://threeb.fr/observabilite-monitoring" />
+    
+    <!-- Geo-targeting meta tags -->
+    <meta name="geo.region" content="FR-13" />
+    <meta name="geo.placename" content="Aix-en-Provence" />
+    <meta name="geo.position" content="43.5297;5.4474" />
+    <meta name="ICBM" content="43.5297, 5.4474" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://threeb.fr/observabilite-monitoring" />
+    <meta property="og:title" content="Observabilité & Monitoring - ThreeB Aix-en-Provence" />
+    <meta property="og:description" content="Expert Observabilité avec Prometheus, Grafana et stack ELK. Dashboards temps réel et alerting intelligent." />
+    <meta property="og:image" content="https://threeb.fr/static/threeb-logo.png" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://threeb.fr/observabilite-monitoring" />
+    <meta property="twitter:title" content="Observabilité & Monitoring - ThreeB" />
+    <meta property="twitter:description" content="Expert Observabilité avec Prometheus, Grafana et stack ELK" />
+    <meta property="twitter:image" content="https://threeb.fr/static/threeb-logo.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Observabilité & Monitoring",
+      "description": "Solutions d'observabilité complète avec Prometheus, Grafana et la stack ELK pour monitoring temps réel et alerting intelligent",
+      "provider": {
+        "@type": "Organization",
+        "name": "ThreeB SAS",
+        "url": "https://threeb.fr",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Aix-en-Provence",
+          "addressRegion": "Provence-Alpes-Côte d'Azur",
+          "addressCountry": "FR"
+        }
+      },
+      "serviceType": "IT Monitoring and Observability",
+      "areaServed": [
+        {"@type": "City", "name": "Aix-en-Provence"},
+        {"@type": "City", "name": "Marseille"},
+        {"@type": "AdministrativeArea", "name": "Provence-Alpes-Côte d'Azur"}
+      ],
+      "offers": {
+        "@type": "Offer",
+        "priceRange": "€€€",
+        "availability": "InStock"
+      }
+    }
+    </script>
+
+    <!-- Font & styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav aria-label="Navigation principale">
+        <a href="/" aria-label="Retour à l'accueil">Accueil</a>
+        <a href="/#services" aria-label="Voir tous nos services">Services</a>
+        <a href="/#testimonials" aria-label="Voir les témoignages clients">Témoignages</a>
+        <a href="/#about" aria-label="En savoir plus sur ThreeB">À propos</a>
+        <a href="/#contact" aria-label="Nous contacter">Contact</a>
+      </nav>
+      <img src="static/threeb-logo.png" alt="Logo ThreeB - Conseil DevOps et SRE" width="140" height="100" loading="eager" />
+      <h1>Observabilité & Monitoring</h1>
+      <p>Visibilité complète sur vos systèmes</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Qu'est-ce que l'Observabilité moderne ?</h2>
+        <p>
+          L'observabilité va au-delà du monitoring traditionnel. Elle vous permet de comprendre 
+          <strong>pourquoi</strong> vos systèmes se comportent d'une certaine manière en combinant 
+          métriques, logs et traces. Cette approche holistique permet d'anticiper les incidents 
+          avant qu'ils n'impactent vos utilisateurs.
+        </p>
+        
+        <div class="logos-container">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Logo Prometheus - Monitoring System" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Logo Grafana - Analytics Platform" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Logo Elasticsearch - Search Engine" loading="lazy" />
+        </div>
+      </section>
+
+      <section>
+        <h2>Nos Solutions d'Observabilité à Aix-en-Provence</h2>
+        
+        <div class="services-grid">
+          <article class="card">
+            <h3>📊 Stack Prometheus + Grafana</h3>
+            <p>
+              Mise en place de la stack de monitoring de référence : Prometheus pour la collecte 
+              de métriques, Grafana pour la visualisation et AlertManager pour l'alerting intelligent. 
+              Solution open-source, scalable et performante.
+            </p>
+            <ul>
+              <li>Prometheus multi-tenancy et HA</li>
+              <li>Dashboards Grafana personnalisés</li>
+              <li>AlertManager avec routing intelligent</li>
+              <li>Service discovery automatique</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>🔍 Stack ELK (Elasticsearch, Logstash, Kibana)</h3>
+            <p>
+              Implémentation complète de la stack ELK pour l'agrégation, l'indexation et la 
+              visualisation de vos logs. Recherche full-text, analyses en temps réel et 
+              corrélation d'événements pour un debug efficace.
+            </p>
+            <ul>
+              <li>Elasticsearch cluster haute disponibilité</li>
+              <li>Logstash pipelines optimisés</li>
+              <li>Kibana dashboards et visualisations</li>
+              <li>Beats agents (Filebeat, Metricbeat)</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>🌐 Observabilité Distribuée</h3>
+            <p>
+              Solutions de tracing distribué avec Jaeger ou Zipkin pour comprendre le 
+              comportement de vos microservices. Corrélation automatique entre métriques, 
+              logs et traces pour une vision 360° de vos applications.
+            </p>
+            <ul>
+              <li>Distributed tracing (Jaeger, Zipkin)</li>
+              <li>OpenTelemetry instrumentation</li>
+              <li>APM (Application Performance Monitoring)</li>
+              <li>Service mesh observability (Istio)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Les 3 Piliers de l'Observabilité</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>📈 Métriques (Metrics)</h3>
+            <p>
+              <strong>Surveillance en temps réel</strong> des performances système et applicatives : 
+              CPU, mémoire, latence, throughput, erreurs. Historique long terme et détection 
+              d'anomalies automatique.
+            </p>
+            <ul>
+              <li>Métriques système et applicatives</li>
+              <li>SLI/SLO monitoring</li>
+              <li>Business metrics</li>
+              <li>Anomaly detection avec ML</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>📄 Logs (Logging)</h3>
+            <p>
+              <strong>Agrégation centralisée</strong> de tous vos logs applicatifs et système. 
+              Recherche full-text, parsing intelligent et corrélation automatique pour 
+              un debugging efficace.
+            </p>
+            <ul>
+              <li>Log aggregation centralisée</li>
+              <li>Structured logging (JSON)</li>
+              <li>Log parsing et enrichissement</li>
+              <li>Retention policies optimisées</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🔗 Traces (Tracing)</h3>
+            <p>
+              <strong>Suivi des requêtes</strong> à travers vos microservices pour identifier 
+              les goulots d'étranglement et optimiser les performances. Visualisation 
+              graphique des call flows.
+            </p>
+            <ul>
+              <li>Request tracing end-to-end</li>
+              <li>Performance bottleneck detection</li>
+              <li>Service dependency mapping</li>
+              <li>Error rate analysis par service</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Bénéfices de l'Observabilité</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>⚡ MTTR Réduit (-75%)</h3>
+            <p>Réduction drastique du temps de résolution d'incidents grâce à la visibilité complète.</p>
+          </div>
+          
+          <div class="card">
+            <h3>🎯 Prévention Proactive</h3>
+            <p>Détection d'anomalies avant impact utilisateur avec alerting intelligent.</p>
+          </div>
+          
+          <div class="card">
+            <h3>📊 Data-Driven Decisions</h3>
+            <p>Optimisations basées sur des données réelles de performance et usage.</p>
+          </div>
+          
+          <div class="card">
+            <h3>💰 Optimisation des Coûts</h3>
+            <p>Identification des ressources sous-utilisées et optimisation de l'infrastructure.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Notre Approche Observabilité</h2>
+        
+        <h3>1. Assessment & Strategy</h3>
+        <p>Audit de votre monitoring existant et définition de la stratégie d'observabilité complète.</p>
+        
+        <h3>2. Architecture & Design</h3>
+        <p>Conception de l'architecture de monitoring : collecte, stockage, visualisation et alerting.</p>
+        
+        <h3>3. Implementation</h3>
+        <p>Déploiement des solutions, configuration des dashboards et mise en place de l'alerting.</p>
+        
+        <h3>4. Optimisation Continue</h3>
+        <p>Fine-tuning des alertes, optimisation des performances et formation des équipes.</p>
+      </section>
+
+      <section>
+        <h2>Technologies & Outils</h2>
+        <div class="logos-container">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Prometheus" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch" loading="lazy" />
+          <img src="https://avatars.githubusercontent.com/u/3380462?s=200&v=4" alt="Kibana" loading="lazy" style="border-radius: 6px;" />
+          <img src="https://avatars.githubusercontent.com/u/609438?s=200&v=4" alt="PagerDuty" loading="lazy" style="border-radius: 6px;" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" loading="lazy" />
+        </div>
+        <p>
+          <strong>Metrics :</strong> Prometheus, InfluxDB, VictoriaMetrics, CloudWatch<br>
+          <strong>Logs :</strong> ELK Stack, Fluentd, Loki, Splunk<br>
+          <strong>Traces :</strong> Jaeger, Zipkin, AWS X-Ray, Azure Application Insights<br>
+          <strong>Visualization :</strong> Grafana, Kibana, Datadog, New Relic<br>
+          <strong>Alerting :</strong> AlertManager, PagerDuty, OpsGenie, Slack
+        </p>
+      </section>
+
+      <section>
+        <h2>Cas d'Usage Typiques</h2>
+        
+        <div class="services-grid">
+          <article class="card">
+            <h3>🏢 Applications Web</h3>
+            <p>Monitoring de performance, taux d'erreur, temps de réponse et comportement utilisateur.</p>
+          </article>
+          
+          <article class="card">
+            <h3>☁️ Infrastructure Cloud</h3>
+            <p>Surveillance des ressources cloud, optimisation des coûts et capacity planning.</p>
+          </article>
+          
+          <article class="card">
+            <h3>🔧 Microservices</h3>
+            <p>Observabilité distribuée, service mesh monitoring et dependency mapping.</p>
+          </article>
+          
+          <article class="card">
+            <h3>🛡️ Sécurité & Compliance</h3>
+            <p>Security monitoring, audit trails et alerting sur les événements critiques.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Prêt à Avoir une Visibilité Complète ?</h2>
+        <p>
+          Contactez-nous pour un <strong>audit gratuit</strong> de votre monitoring actuel 
+          et découvrez comment l'observabilité moderne peut transformer votre gestion d'incidents.
+        </p>
+        <a class="button" href="mailto:contact@threeb.fr">Audit Gratuit</a>
+        <p><small>Intervention sur Aix-en-Provence, Marseille et toute la région PACA</small></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ThreeB SAS. Tous droits réservés.</p>
+      <nav aria-label="Navigation footer">
+        <a href="/">Accueil</a>
+        <a href="/#services">Services</a>
+        <a href="/#about">À propos</a>
+        <a href="mailto:contact@threeb.fr">Contact</a>
+      </nav>
+    </footer>
+  </body>
+</html>

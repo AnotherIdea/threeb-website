@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TD4YYM76QZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TD4YYM76QZ');
+    </script>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site Reliability Engineering (SRE) | ThreeB - SLA/SLO Kubernetes Aix-en-Provence</title>
+    <meta name="description" content="Expert SRE avec pratiques Google à Aix-en-Provence. SLA/SLO, gestion d'incidents PagerDuty, orchestration Kubernetes, réduction dette technique. Consultation gratuite." />
+    <meta name="author" content="ThreeB SAS" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://threeb.fr/site-reliability-engineering" />
+    
+    <!-- Geo-targeting meta tags -->
+    <meta name="geo.region" content="FR-13" />
+    <meta name="geo.placename" content="Aix-en-Provence" />
+    <meta name="geo.position" content="43.5297;5.4474" />
+    <meta name="ICBM" content="43.5297, 5.4474" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://threeb.fr/site-reliability-engineering" />
+    <meta property="og:title" content="Site Reliability Engineering (SRE) - ThreeB Aix-en-Provence" />
+    <meta property="og:description" content="Expert SRE avec pratiques Google. SLA/SLO, gestion d'incidents et orchestration Kubernetes." />
+    <meta property="og:image" content="https://threeb.fr/static/threeb-logo.png" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://threeb.fr/site-reliability-engineering" />
+    <meta property="twitter:title" content="Site Reliability Engineering (SRE) - ThreeB" />
+    <meta property="twitter:description" content="Expert SRE avec pratiques Google. SLA/SLO et orchestration Kubernetes" />
+    <meta property="twitter:image" content="https://threeb.fr/static/threeb-logo.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Site Reliability Engineering (SRE)",
+      "description": "Service d'implémentation des pratiques SRE Google : définition et optimisation des SLA/SLO, gestion d'incidents avec PagerDuty, orchestration Kubernetes",
+      "provider": {
+        "@type": "Organization",
+        "name": "ThreeB SAS",
+        "url": "https://threeb.fr",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Aix-en-Provence",
+          "addressRegion": "Provence-Alpes-Côte d'Azur",
+          "addressCountry": "FR"
+        }
+      },
+      "serviceType": "Site Reliability Engineering",
+      "areaServed": [
+        {"@type": "City", "name": "Aix-en-Provence"},
+        {"@type": "City", "name": "Marseille"},
+        {"@type": "AdministrativeArea", "name": "Provence-Alpes-Côte d'Azur"}
+      ],
+      "offers": {
+        "@type": "Offer",
+        "priceRange": "€€€",
+        "availability": "InStock"
+      }
+    }
+    </script>
+
+    <!-- Font & styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav aria-label="Navigation principale">
+        <a href="/" aria-label="Retour à l'accueil">Accueil</a>
+        <a href="/#services" aria-label="Voir tous nos services">Services</a>
+        <a href="/#testimonials" aria-label="Voir les témoignages clients">Témoignages</a>
+        <a href="/#about" aria-label="En savoir plus sur ThreeB">À propos</a>
+        <a href="/#contact" aria-label="Nous contacter">Contact</a>
+      </nav>
+      <img src="static/threeb-logo.png" alt="Logo ThreeB - Conseil DevOps et SRE" width="140" height="100" loading="eager" />
+      <h1>Site Reliability Engineering (SRE)</h1>
+      <p>Fiabilité et performance de vos systèmes</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Qu'est-ce que le Site Reliability Engineering ?</h2>
+        <p>
+          Le SRE est une approche créée par Google qui applique les principes de l'ingénierie logicielle 
+          aux opérations IT. L'objectif : <strong>construire et maintenir des systèmes fiables à grande échelle</strong> 
+          en automatisant les tâches répétitives et en se concentrant sur la prévention plutôt que la réaction.
+        </p>
+        
+        <div class="logos-container">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Logo Kubernetes - Container Orchestration" loading="lazy" />
+          <img src="https://avatars.githubusercontent.com/u/609438?s=200&v=4" alt="Logo PagerDuty - Incident Management" style="border-radius: 6px;" loading="lazy" />
+        </div>
+      </section>
+
+      <section>
+        <h2>Nos Services SRE à Aix-en-Provence</h2>
+        
+        <div class="services-grid">
+          <article class="card">
+            <h3>📊 SLI/SLO/SLA Management</h3>
+            <p>
+              Définition et implémentation des Service Level Indicators (SLI), Service Level 
+              Objectives (SLO) et Service Level Agreements (SLA). Tableau de bord en temps réel 
+              et error budgets pour une gestion proactive de la qualité de service.
+            </p>
+            <ul>
+              <li>SLI définition et mesure automatisée</li>
+              <li>SLO targets basés sur les besoins business</li>
+              <li>Error budget monitoring et alerting</li>
+              <li>SLA reporting et dashboard exécutif</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>🚨 Incident Management</h3>
+            <p>
+              Mise en place de processus d'incident management mature avec PagerDuty, 
+              escalation intelligente, post-mortems blameless et analyse des causes racines. 
+              Réduction drastique du MTTR et amélioration continue.
+            </p>
+            <ul>
+              <li>PagerDuty configuration et workflows</li>
+              <li>On-call rotations et escalations</li>
+              <li>Incident response playbooks</li>
+              <li>Post-mortem templates et process</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>☸️ Kubernetes Operations</h3>
+            <p>
+              Expertise complète en orchestration Kubernetes : architecture HA, networking, 
+              storage, sécurité et auto-scaling. Opérations day-2 incluant backup, disaster 
+              recovery et capacity planning.
+            </p>
+            <ul>
+              <li>Kubernetes cluster setup et hardening</li>
+              <li>Helm charts et GitOps workflows</li>
+              <li>Service mesh (Istio, Linkerd)</li>
+              <li>Backup et disaster recovery</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Piliers du Site Reliability Engineering</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>🎯 Availability Target</h3>
+            <p>
+              <strong>99.9% à 99.99%</strong> d'availability selon vos besoins business. 
+              Architecture résiliente, failure modes analysis et chaos engineering 
+              pour tester la robustesse.
+            </p>
+            <ul>
+              <li>High Availability architecture</li>
+              <li>Disaster Recovery planning</li>
+              <li>Chaos Engineering (Chaos Monkey)</li>
+              <li>Fault tolerance patterns</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>⚡ Performance & Latency</h3>
+            <p>
+              <strong>Optimisation des performances</strong> avec monitoring P95/P99, 
+              capacity planning et auto-scaling intelligent. Load testing et 
+              performance budgets.
+            </p>
+            <ul>
+              <li>Latency monitoring (P50, P95, P99)</li>
+              <li>Load testing et stress testing</li>
+              <li>Auto-scaling horizontal et vertical</li>
+              <li>Performance regression detection</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🔄 Change Management</h3>
+            <p>
+              <strong>Déploiements sûrs</strong> avec canary releases, feature flags 
+              et rollback automatique. Réduction des risques liés aux changements 
+              par l'automatisation.
+            </p>
+            <ul>
+              <li>Canary deployments et blue-green</li>
+              <li>Feature flags et progressive rollouts</li>
+              <li>Automated rollback triggers</li>
+              <li>Change approval workflows</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🛠️ Toil Automation</h3>
+            <p>
+              <strong>Élimination du toil</strong> (tâches répétitives manuelles) 
+              par l'automatisation. Self-healing systems et runbooks automatisés 
+              pour libérer du temps ingénieur.
+            </p>
+            <ul>
+              <li>Runbook automation</li>
+              <li>Self-healing systems</li>
+              <li>Alerts correlation et auto-remediation</li>
+              <li>Capacity management automatisé</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Error Budget & SLO Framework</h2>
+        
+        <h3>🎯 Définition des SLO</h3>
+        <p>Objectifs de niveau de service basés sur l'expérience utilisateur et les besoins business.</p>
+        
+        <h3>📊 Error Budget Calculation</h3>
+        <p>Budget d'erreur permettant d'équilibrer vélocité de développement et fiabilité.</p>
+        
+        <h3>⚖️ Error Budget Policy</h3>
+        <p>Politique automatisée : gel des features si budget épuisé, focus sur la fiabilité.</p>
+        
+        <h3>📈 Continuous Improvement</h3>
+        <p>Analyse des trends, post-mortems et amélioration continue des pratiques SRE.</p>
+      </section>
+
+      <section>
+        <h2>Bénéfices du SRE</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>📈 Availability +99.9%</h3>
+            <p>Systèmes haute disponibilité avec réduction drastique des outages non planifiées.</p>
+          </div>
+          
+          <div class="card">
+            <h3>⚡ MTTR -80%</h3>
+            <p>Temps de résolution d'incidents réduit grâce aux runbooks et à l'automatisation.</p>
+          </div>
+          
+          <div class="card">
+            <h3>🚀 Faster Delivery</h3>
+            <p>Déploiements sûrs et fréquents grâce aux practices SRE et error budgets.</p>
+          </div>
+          
+          <div class="card">
+            <h3>💰 Reduced Costs</h3>
+            <p>Optimisation des ressources et réduction des coûts opérationnels par l'automatisation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Notre Approche SRE</h2>
+        
+        <h3>1. SRE Assessment</h3>
+        <p>Évaluation de la maturité SRE actuelle et identification des quick wins et roadmap.</p>
+        
+        <h3>2. SLO Definition Workshop</h3>
+        <p>Workshops collaboratifs pour définir les SLI/SLO alignés avec les objectifs business.</p>
+        
+        <h3>3. Implementation & Tooling</h3>
+        <p>Mise en place des outils, monitoring, alerting et processus d'incident management.</p>
+        
+        <h3>4. Culture & Training</h3>
+        <p>Transformation culturelle, formation des équipes et établissement des practices SRE.</p>
+      </section>
+
+      <section>
+        <h2>Technologies & Outils SRE</h2>
+        <div class="logos-container">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" loading="lazy" />
+          <img src="https://avatars.githubusercontent.com/u/609438?s=200&v=4" alt="PagerDuty" loading="lazy" style="border-radius: 6px;" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Prometheus" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform" loading="lazy" />
+          <img src="https://avatars.githubusercontent.com/u/13629408?s=200&v=4" alt="Istio" loading="lazy" style="border-radius: 6px;" />
+        </div>
+        <p>
+          <strong>Orchestration :</strong> Kubernetes, Docker, Helm, Kustomize<br>
+          <strong>Incident Management :</strong> PagerDuty, OpsGenie, Jira Service Management<br>
+          <strong>Monitoring :</strong> Prometheus, Grafana, Datadog, New Relic<br>
+          <strong>Chaos Engineering :</strong> Chaos Monkey, Litmus, Gremlin<br>
+          <strong>Service Mesh :</strong> Istio, Linkerd, Consul Connect
+        </p>
+      </section>
+
+      <section>
+        <h2>Métriques SRE Clés</h2>
+        
+        <div class="services-grid">
+          <article class="card">
+            <h3>📊 Golden Signals</h3>
+            <p><strong>Latency, Traffic, Errors, Saturation</strong> - Les 4 métriques essentielles pour monitorer tout service.</p>
+          </article>
+          
+          <article class="card">
+            <h3>🎯 Availability</h3>
+            <p><strong>Uptime percentage</strong> - Mesure de la disponibilité service basée sur les SLO définis.</p>
+          </article>
+          
+          <article class="card">
+            <h3>⚡ MTTR/MTBF</h3>
+            <p><strong>Mean Time To Recovery/Between Failures</strong> - Métriques de fiabilité et de récupération.</p>
+          </article>
+          
+          <article class="card">
+            <h3>💡 Toil Percentage</h3>
+            <p><strong>Tâches manuelles répétitives</strong> - Objectif : <50% du temps SRE en toil, >50% en engineering.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Prêt à Améliorer la Fiabilité de vos Systèmes ?</h2>
+        <p>
+          Contactez-nous pour un <strong>SRE assessment gratuit</strong> et découvrez comment 
+          les pratiques Google SRE peuvent transformer la fiabilité de votre infrastructure.
+        </p>
+        <a class="button" href="mailto:contact@threeb.fr">SRE Assessment Gratuit</a>
+        <p><small>Intervention sur Aix-en-Provence, Marseille et toute la région PACA</small></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ThreeB SAS. Tous droits réservés.</p>
+      <nav aria-label="Navigation footer">
+        <a href="/">Accueil</a>
+        <a href="/#services">Services</a>
+        <a href="/#about">À propos</a>
+        <a href="mailto:contact@threeb.fr">Contact</a>
+      </nav>
+    </footer>
+  </body>
+</html>

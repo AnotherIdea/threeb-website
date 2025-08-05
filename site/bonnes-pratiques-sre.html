@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TD4YYM76QZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TD4YYM76QZ');
+    </script>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bonnes Pratiques SRE | ThreeB - Guide Site Reliability Engineering SLO SLA Error Budget</title>
+    <meta name="description" content="Guide bonnes pratiques Site Reliability Engineering : SLO/SLA, Error Budget, Toil Reduction, Incident Response, Monitoring. Expert SRE Aix-en-Provence." />
+    <meta name="author" content="ThreeB SAS" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://threeb.fr/bonnes-pratiques-sre" />
+    
+    <!-- Geo-targeting meta tags -->
+    <meta name="geo.region" content="FR-13" />
+    <meta name="geo.placename" content="Aix-en-Provence" />
+    <meta name="geo.position" content="43.5297;5.4474" />
+    <meta name="ICBM" content="43.5297, 5.4474" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://threeb.fr/bonnes-pratiques-sre" />
+    <meta property="og:title" content="Bonnes Pratiques SRE - ThreeB" />
+    <meta property="og:description" content="Guide bonnes pratiques Site Reliability Engineering : SLO/SLA, Error Budget, Toil Reduction." />
+    <meta property="og:image" content="https://threeb.fr/static/threeb-logo.png" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Structured Data for Educational Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Bonnes Pratiques Site Reliability Engineering (SRE)",
+      "description": "Guide complet des bonnes pratiques SRE : SLO/SLA definition, Error Budget management, Toil Reduction, Incident Response, Monitoring et Alerting pour systèmes fiables.",
+      "author": {
+        "@type": "Organization",
+        "name": "ThreeB SAS", 
+        "url": "https://threeb.fr"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ThreeB SAS",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://threeb.fr/static/threeb-logo.png"
+        }
+      },
+      "datePublished": "2025-01-01",
+      "dateModified": "2025-01-01",
+      "articleSection": "SRE Best Practices",
+      "keywords": [
+        "SRE",
+        "Site Reliability Engineering",
+        "SLO",
+        "SLA", 
+        "Error Budget",
+        "Toil Reduction",
+        "Incident Response",
+        "Monitoring",
+        "Reliability"
+      ],
+      "about": {
+        "@type": "Thing",
+        "name": "Site Reliability Engineering"
+      }
+    }
+    </script>
+
+    <!-- Font & styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .sre-header {
+        background: linear-gradient(135deg, #059669, #10b981);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 16px;
+        margin: 2rem 0;
+      }
+      .principle-card {
+        background: linear-gradient(145deg, #f0fdf4, #dcfce7);
+        border: 2px solid #16a34a;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 1rem 0;
+        position: relative;
+      }
+      .principle-card::before {
+        content: "✅";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        background: #16a34a;
+        color: white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+      }
+      .slo-calculator {
+        background: #f8fafc;
+        border: 2px solid #3b82f6;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem 0;
+        font-family: monospace;
+      }
+      .error-budget-indicator {
+        background: linear-gradient(90deg, #16a34a 70%, #eab308 85%, #dc2626);
+        height: 20px;
+        border-radius: 10px;
+        margin: 1rem 0;
+        position: relative;
+      }
+      .error-budget-indicator::after {
+        content: "70% Budget Used";
+        position: absolute;
+        left: 70%;
+        top: 25px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: #374151;
+      }
+      .antipattern {
+        background: #fef2f2;
+        border-left: 4px solid #dc2626;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+      }
+      .best-practice {
+        background: #f0fdf4;
+        border-left: 4px solid #16a34a;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+      }
+      .toil-metric {
+        background: #fef3c7;
+        border: 1px solid #f59e0b;
+        border-radius: 8px;
+        padding: 1rem;
+        margin: 0.5rem 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sre-header">
+      🎯 BONNES PRATIQUES SITE RELIABILITY ENGINEERING • SLO • ERROR BUDGET • TOIL REDUCTION
+    </div>
+
+    <header>
+      <nav aria-label="Navigation principale">
+        <a href="/" aria-label="Retour à l'accueil">Accueil</a>
+        <a href="/#services" aria-label="Voir tous nos services">Services</a>
+        <a href="/#testimonials" aria-label="Voir les témoignages clients">Témoignages</a>
+        <a href="/#about" aria-label="En savoir plus sur ThreeB">À propos</a>
+        <a href="/#contact" aria-label="Nous contacter">Contact</a>
+      </nav>
+      <img src="static/threeb-logo.png" alt="Logo ThreeB - Conseil DevOps et SRE" width="140" height="100" loading="eager" />
+      <h1>Bonnes Pratiques SRE</h1>
+      <p>Site Reliability Engineering • Google SRE Book</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Site Reliability Engineering - Bonnes Pratiques</h2>
+        <p>
+          <strong>Guide complet des bonnes pratiques SRE</strong> basé sur l'expérience Google et les standards 
+          industrie. Implémentez une culture SRE solide : SLO/SLA, Error Budget, Toil Reduction, 
+          Incident Response, monitoring proactif. <strong>Principes éprouvés pour systèmes fiables à l'échelle</strong>.
+        </p>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>🎯 Service Level Objectives</h3>
+            <p>Définition et gestion SLO alignés business</p>
+          </div>
+          
+          <div class="card">
+            <h3>📊 Error Budget Management</h3>
+            <p>Balance innovation vs reliability avec error budget</p>
+          </div>
+          
+          <div class="card">
+            <h3>🔄 Toil Reduction</h3>
+            <p>Automatisation travail opérationnel répétitif</p>
+          </div>
+          
+          <div class="card">
+            <h3>🚨 Incident Response</h3>
+            <p>Processus incident management et post-mortems</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>1. Service Level Objectives (SLO) & Indicators (SLI)</h2>
+        
+        <div class="principle-card">
+          <h3>🎯 Définition SLO Efficaces</h3>
+          <p>
+            <strong>SLO = objectifs mesurables de fiabilité service</strong> exprimés en pourcentage 
+            de "good events" sur une période donnée. Base de toutes les décisions SRE.
+          </p>
+          
+          <div class="slo-calculator">
+            <h4>📐 Calcul SLO Standard</h4>
+            <p><strong>Availability SLO :</strong></p>
+            <p>SLO = (Successful Requests / Total Requests) × 100</p>
+            <p>Exemple : 99.9% = 999 requêtes réussies sur 1000</p>
+            
+            <p><strong>Latency SLO :</strong></p>
+            <p>SLO = P99 response time < 200ms</p>
+            <p>99% des requêtes doivent répondre en moins de 200ms</p>
+            
+            <p><strong>Downtime Allowable :</strong></p>
+            <ul>
+              <li>99.9% SLO = 8.77 heures/an = 43.8 minutes/mois</li>
+              <li>99.95% SLO = 4.38 heures/an = 21.9 minutes/mois</li>
+              <li>99.99% SLO = 52.6 minutes/an = 4.38 minutes/mois</li>
+            </ul>
+          </div>
+
+          <div class="best-practice">
+            <h4>✅ SLO Best Practices</h4>
+            <ul>
+              <li><strong>User-centric SLIs</strong> - Mesurer expérience utilisateur réelle</li>
+              <li><strong>Achievable targets</strong> - SLO légèrement en dessous performance actuelle</li>
+              <li><strong>Business alignment</strong> - SLO reflètent priorités business</li>
+              <li><strong>Few but meaningful</strong> - 3-5 SLI maximum par service</li>
+              <li><strong>Consistent measurement</strong> - Même définition partout</li>
+            </ul>
+          </div>
+
+          <div class="antipattern">
+            <h4>❌ SLO Anti-Patterns</h4>
+            <ul>
+              <li><strong>Perfection trap</strong> - SLO 100% irréalistes et contre-productifs</li>
+              <li><strong>Too many SLIs</strong> - Complexité qui noie l'essentiel</li>
+              <li><strong>Infrastructure-focused</strong> - CPU/Memory au lieu d'expérience utilisateur</li>
+              <li><strong>Static targets</strong> - SLO jamais révisés selon évolution business</li>
+              <li><strong>No consequences</strong> - SLO sans impact sur priorités équipe</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>2. Error Budget Management</h2>
+        
+        <div class="principle-card">
+          <h3>📊 Error Budget Fundamentals</h3>
+          <p>
+            <strong>Error Budget = 100% - SLO</strong>. Budget d'erreurs acceptable pour innover 
+            sans compromettre la fiabilité. Mécanisme d'équilibrage innovation vs stabilité.
+          </p>
+          
+          <div class="error-budget-indicator"></div>
+          
+          <div class="services-grid">
+            <div class="toil-metric">
+              <h4>📈 Error Budget Healthy</h4>
+              <p><strong>< 50% consommé</strong></p>
+              <p>Innovation autorisée</p>
+              <p>Deployments normaux</p>
+            </div>
+            
+            <div class="toil-metric">
+              <h4>⚠️ Error Budget Warning</h4>
+              <p><strong>50-90% consommé</strong></p>
+              <p>Prudence required</p>
+              <p>Slow down features</p>
+            </div>
+            
+            <div class="toil-metric">
+              <h4>🚨 Error Budget Alert</h4>
+              <p><strong>> 90% consommé</strong></p>
+              <p>Feature freeze</p>
+              <p>Focus reliability</p>
+            </div>
+          </div>
+
+          <div class="best-practice">
+            <h4>🎯 Error Budget Policies</h4>
+            <ul>
+              <li><strong>Burn rate alerts</strong> - Détection consommation rapide budget</li>
+              <li><strong>Escalation policies</strong> - Actions selon niveau consommation</li>
+              <li><strong>Automatic throttling</strong> - Réduction automatique releases</li>
+              <li><strong>Investment decisions</strong> - Priorisation reliability work</li>
+              <li><strong>Cross-team alignment</strong> - Shared responsibility reliability</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>3. Toil Reduction & Automation</h2>
+        
+        <div class="principle-card">
+          <h3>🔄 Définition et Mesure du Toil</h3>
+          <p>
+            <strong>Toil = travail opérationnel manuel, répétitif, sans valeur long terme</strong>. 
+            Objectif SRE : limiter toil à <50% du temps pour se concentrer sur engineering work.
+          </p>
+          
+          <div class="services-grid">
+            <div class="card">
+              <h3>❌ Exemples de Toil</h3>
+              <ul>
+                <li>Deployments manuels répétitifs</li>
+                <li>Ticket resolution routine</li>
+                <li>Manual scaling operations</li>
+                <li>Log analysis manuelle récurrente</li>
+                <li>Backup/restore manuel</li>
+                <li>Configuration changes répétées</li>
+              </ul>
+            </div>
+            
+            <div class="card">
+              <h3>✅ Engineering Work</h3>
+              <ul>
+                <li>Automation development</li>
+                <li>Platform/tooling improvements</li>
+                <li>Performance optimization</li>
+                <li>Reliability improvements</li>
+                <li>Monitoring/alerting enhancement</li>
+                <li>Architecture evolution</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="best-practice">
+            <h4>🛠️ Stratégies Toil Reduction</h4>
+            <ul>
+              <li><strong>Toil measurement</strong> - Tracking hebdomadaire temps toil vs engineering</li>
+              <li><strong>Automation pipeline</strong> - CI/CD pour éliminer deployments manuels</li>
+              <li><strong>Self-service platforms</strong> - Outils pour équipes dev autonomes</li>
+              <li><strong>Infrastructure as Code</strong> - Provisioning automatisé et reproductible</li>
+              <li><strong>Runbook automation</strong> - Scripts pour tâches opérationnelles</li>
+              <li><strong>Intelligent alerting</strong> - Réduction noise et false positives</li>
+            </ul>
+          </div>
+          
+          <div class="slo-calculator">
+            <h4>📊 Toil Tracking Example</h4>
+            <p><strong>Semaine type SRE (40h) :</strong></p>
+            <ul>
+              <li>Engineering Work: 25h (62.5%) ✅</li>
+              <li>Toil: 12h (30%) ✅</li> 
+              <li>Overhead: 3h (7.5%)</li>
+            </ul>
+            <p><strong>Target :</strong> Toil < 50%, Engineering > 50%</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>4. Monitoring & Alerting Strategy</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>📊 Golden Signals Monitoring</h3>
+            <p><strong>4 métriques essentielles selon Google SRE</strong></p>
+            <ul>
+              <li><strong>Latency</strong> - Temps de réponse requests (P50, P95, P99)</li>
+              <li><strong>Traffic</strong> - Volume requêtes par seconde</li>
+              <li><strong>Errors</strong> - Taux d'erreur (4xx, 5xx, timeouts)</li>
+              <li><strong>Saturation</strong> - Utilisation ressources critiques</li>
+            </ul>
+            
+            <div class="best-practice">
+              <strong>🎯 Monitoring Principles :</strong>
+              <ul>
+                <li>Monitor symptoms, not causes</li>
+                <li>User-facing metrics priority</li>
+                <li>High-level then drill-down</li>
+                <li>Automation-friendly metrics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="card">
+            <h3>🚨 Intelligent Alerting</h3>
+            <p><strong>Alertes actionnables et meaningful</strong></p>
+            <ul>
+              <li><strong>Symptom-based</strong> - Alerte sur impact utilisateur</li>
+              <li><strong>Actionable</strong> - Chaque alerte = action claire</li>
+              <li><strong>Context-rich</strong> - Informations pour diagnostic</li>
+              <li><strong>Appropriate urgency</strong> - Pas de fatigue alerting</li>
+            </ul>
+            
+            <div class="antipattern">
+              <strong>❌ Alerting Anti-Patterns :</strong>
+              <ul>
+                <li>Alert on everything → noise</li>
+                <li>Alerts without clear action</li>
+                <li>Duplicate/overlapping alerts</li>
+                <li>Infrastructure alerts for user issues</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>5. Incident Response & Post-Mortems</h2>
+        
+        <div class="principle-card">
+          <h3>🚨 Incident Management Process</h3>
+          <p>
+            <strong>Processus structuré pour incident response</strong> : détection rapide, 
+            mitigation efficace, communication transparente, apprentissage post-incident.
+          </p>
+          
+          <div class="services-grid">
+            <div class="card">
+              <h3>1️⃣ Detection & Triage</h3>
+              <ul>
+                <li><strong>Automated detection</strong> - Monitoring et alerting</li>
+                <li><strong>Severity classification</strong> - P0/P1/P2/P3 levels</li>
+                <li><strong>Incident commander</strong> - Role assignment clear</li>
+                <li><strong>War room setup</strong> - Communication centralisée</li>
+              </ul>
+            </div>
+            
+            <div class="card">
+              <h3>2️⃣ Mitigation & Resolution</h3>
+              <ul>
+                <li><strong>Immediate mitigation</strong> - Stop the bleeding first</li>
+                <li><strong>Root cause investigation</strong> - Parallel à mitigation</li>
+                <li><strong>Communication updates</strong> - Stakeholders informés</li>
+                <li><strong>Resolution confirmation</strong> - Service restauré</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="best-practice">
+            <h4>📋 Blameless Post-Mortem</h4>
+            <p><strong>Culture d'apprentissage sans blame</strong></p>
+            <ul>
+              <li><strong>Timeline détaillée</strong> - Chronologie événements précise</li>
+              <li><strong>Root cause analysis</strong> - 5 Whys, cause analysis</li>
+              <li><strong>Action items</strong> - Améliorations concrètes et assignées</li>
+              <li><strong>Follow-up</strong> - Vérification implémentation actions</li>
+              <li><strong>Knowledge sharing</strong> - Lessons learned équipes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>6. Capacity Planning & Performance</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>📈 Demand Forecasting</h3>
+            <p><strong>Anticipation besoins capacity</strong></p>
+            <ul>
+              <li><strong>Growth modeling</strong> - Tendances historiques et business</li>
+              <li><strong>Seasonal patterns</strong> - Variations cycliques trafic</li>
+              <li><strong>Feature impact</strong> - Nouveautés effet sur resources</li>
+              <li><strong>Buffer planning</strong> - Marge sécurité pour pics</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>⚡ Performance Optimization</h3>
+            <p><strong>Efficacité ressources maximize</strong></p>
+            <ul>
+              <li><strong>Resource rightsizing</strong> - Optimisation allocation</li>
+              <li><strong>Auto-scaling</strong> - Adaptation automatique charge</li>
+              <li><strong>Caching strategies</strong> - Réduction load backend</li>
+              <li><strong>Database optimization</strong> - Query tuning, indexing</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🎯 Load Testing</h3>
+            <p><strong>Validation capacity limits</strong></p>
+            <ul>
+              <li><strong>Baseline testing</strong> - Performance actuelle</li>
+              <li><strong>Stress testing</strong> - Points de rupture</li>
+              <li><strong>Spike testing</strong> - Réaction pics soudains</li>
+              <li><strong>Endurance testing</strong> - Stabilité long terme</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🔄 Chaos Engineering</h3>
+            <p><strong>Test resilience systemic</strong></p>
+            <ul>
+              <li><strong>Failure injection</strong> - Simulation pannes</li>
+              <li><strong>Network partitions</strong> - Test isolation</li>
+              <li><strong>Resource exhaustion</strong> - Comportement limites</li>
+              <li><strong>Dependency failures</strong> - Resilience cascade</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>7. SRE Culture & Organization</h2>
+        
+        <div class="principle-card">
+          <h3>👥 Building SRE Team Culture</h3>
+          <p>
+            <strong>Culture SRE = collaboration Dev/Ops, shared responsibility, learning mindset</strong>. 
+            Balance entre development velocity et system reliability.
+          </p>
+          
+          <div class="best-practice">
+            <h4>🎯 SRE Principles Culturels</h4>
+            <ul>
+              <li><strong>Shared ownership</strong> - Dev et SRE co-responsables reliability</li>
+              <li><strong>Blameless culture</strong> - Focus learning vs punishment</li>
+              <li><strong>Automation first</strong> - Préférence solutions automatisées</li>
+              <li><strong>Data-driven decisions</strong> - Métriques guident priorités</li>
+              <li><strong>Gradual rollouts</strong> - Risk minimization avec staged deployments</li>
+              <li><strong>Error budget policy</strong> - Balance innovation/reliability</li>
+            </ul>
+          </div>
+
+          <div class="services-grid">
+            <div class="card">
+              <h3>🔄 SRE Engagement Models</h3>
+              <ul>
+                <li><strong>Embedded SRE</strong> - SRE dans équipe product</li>
+                <li><strong>Platform SRE</strong> - Services partagés infrastructure</li>
+                <li><strong>Consulting SRE</strong> - Expertise ponctuelle équipes</li>
+                <li><strong>SRE as a Service</strong> - Support externe specialized</li>
+              </ul>
+            </div>
+            
+            <div class="card">
+              <h3>📚 Knowledge Management</h3>
+              <ul>
+                <li><strong>Runbooks</strong> - Procédures opérationnelles documentées</li>
+                <li><strong>Post-mortem database</strong> - Historical incidents searchable</li>
+                <li><strong>Architecture docs</strong> - System design up-to-date</li>
+                <li><strong>On-call guides</strong> - Escalation paths clear</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>8. SRE Metrics & KPIs</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>🎯 Service Performance</h3>
+            <ul>
+              <li><strong>SLO Compliance</strong> - % time within SLO targets</li>
+              <li><strong>Error Budget Burn Rate</strong> - Vitesse consommation budget</li>
+              <li><strong>MTTR</strong> - Mean Time To Recovery incidents</li>
+              <li><strong>MTBF</strong> - Mean Time Between Failures</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>⚡ Operational Efficiency</h3>
+            <ul>
+              <li><strong>Toil Percentage</strong> - % time spent on toil vs engineering</li>
+              <li><strong>Automation Coverage</strong> - % processes automated</li>
+              <li><strong>Alert Noise Ratio</strong> - False positives / Total alerts</li>
+              <li><strong>Deployment Frequency</strong> - Releases per week/month</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>📈 Business Impact</h3>
+            <ul>
+              <li><strong>User Satisfaction</strong> - NPS, satisfaction surveys</li>
+              <li><strong>Revenue Impact</strong> - Downtime cost quantified</li>
+              <li><strong>Feature Velocity</strong> - Time to market nouvelles features</li>
+              <li><strong>Compliance</strong> - Regulatory requirements adherence</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>👥 Team Health</h3>
+            <ul>
+              <li><strong>On-call Load</strong> - Hours on-call per person</li>
+              <li><strong>Burnout Indicators</strong> - Rotation frequency, satisfaction</li>
+              <li><strong>Knowledge Distribution</strong> - Single points of failure</li>
+              <li><strong>Skill Development</strong> - Training, certification progress</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>9. Tools & Technologies SRE</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>📊 Monitoring & Observability</h3>
+            <ul>
+              <li><strong>Metrics</strong> - Prometheus, InfluxDB, CloudWatch</li>
+              <li><strong>Logging</strong> - ELK Stack, Splunk, Fluentd</li>
+              <li><strong>Tracing</strong> - Jaeger, Zipkin, OpenTelemetry</li>
+              <li><strong>Dashboards</strong> - Grafana, Kibana, DataDog</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🚨 Incident Management</h3>
+            <ul>
+              <li><strong>Alerting</strong> - PagerDuty, OpsGenie, AlertManager</li>
+              <li><strong>Communication</strong> - Slack, Microsoft Teams</li>
+              <li><strong>Ticketing</strong> - Jira, ServiceNow, GitHub Issues</li>
+              <li><strong>Status Pages</strong> - StatusPage, Atlassian Status</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🔄 Automation & Deployment</h3>
+            <ul>
+              <li><strong>CI/CD</strong> - GitLab CI, GitHub Actions, Jenkins</li>
+              <li><strong>Infrastructure</strong> - Terraform, Ansible, Pulumi</li>
+              <li><strong>Orchestration</strong> - Kubernetes, Docker Swarm</li>
+              <li><strong>Chaos Engineering</strong> - Chaos Monkey, Litmus</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>📈 Performance & Capacity</h3>
+            <ul>
+              <li><strong>Load Testing</strong> - JMeter, k6, Artillery</li>
+              <li><strong>APM</strong> - New Relic, Dynatrace, AppDynamics</li>
+              <li><strong>Profiling</strong> - pprof, JProfiler, py-spy</li>
+              <li><strong>Capacity Planning</strong> - Custom tools, spreadsheets</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>10. Implementation Roadmap</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>📅 Phase 1: Foundation (1-3 mois)</h3>
+            <ul>
+              <li>SLI/SLO definition première version</li>
+              <li>Basic monitoring et alerting setup</li>
+              <li>Incident response process</li>
+              <li>Post-mortem template et process</li>
+              <li>Toil measurement baseline</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🚀 Phase 2: Maturation (3-6 mois)</h3>
+            <ul>
+              <li>Error budget policies implémentation</li>
+              <li>Automation priorités toil reduction</li>
+              <li>Advanced monitoring (tracing, profiling)</li>
+              <li>Chaos engineering experiments</li>
+              <li>SRE culture training équipes</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🎯 Phase 3: Excellence (6-12 mois)</h3>
+            <ul>
+              <li>SLO optimization et fine-tuning</li>
+              <li>Advanced automation (self-healing)</li>
+              <li>Predictive capacity planning</li>
+              <li>Cross-team SRE practices</li>
+              <li>Industry benchmarking</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🔄 Phase 4: Scaling (12+ mois)</h3>
+            <ul>
+              <li>Multi-region SRE practices</li>
+              <li>SRE as a Service internal</li>
+              <li>Advanced ML/AI integration</li>
+              <li>External SRE community contribution</li>
+              <li>Continuous improvement culture</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Implémentation Pratiques SRE ?</h2>
+        <p>
+          Transformez votre organisation avec SRE ! <strong>Assessment SRE gratuit de 60 minutes</strong> 
+          pour évaluer votre maturité actuelle et définir la roadmap SRE optimale.
+        </p>
+        <a class="button" href="mailto:contact@threeb.fr?subject=Bonnes%20Pratiques%20SRE%20-%20Assessment%2060min">
+          🎯 Assessment SRE Gratuit 60min
+        </a>
+        <p><small>
+          <strong>Expert SRE certifié</strong> • Formation équipes • Implementation support<br>
+          SLO/SLA • Error Budget • Toil Reduction • Culture transformation
+        </small></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ThreeB SAS. Tous droits réservés.</p>
+      <nav aria-label="Navigation footer">
+        <a href="/">Accueil</a>
+        <a href="/#services">Services</a>
+        <a href="/#about">À propos</a>
+        <a href="mailto:contact@threeb.fr">Contact</a>
+      </nav>
+    </footer>
+  </body>
+</html>

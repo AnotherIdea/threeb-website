@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TD4YYM76QZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TD4YYM76QZ');
+    </script>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide Observabilité Open-Source | ThreeB - Prometheus Grafana ELK Stack Jaeger</title>
+    <meta name="description" content="Guide complet observabilité open-source : Prometheus, Grafana, ELK Stack, Jaeger. Setup monitoring, logging, tracing. Tutoriel expert Aix-en-Provence." />
+    <meta name="author" content="ThreeB SAS" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://threeb.fr/guide-observabilite-open-source" />
+    
+    <!-- Geo-targeting meta tags -->
+    <meta name="geo.region" content="FR-13" />
+    <meta name="geo.placename" content="Aix-en-Provence" />
+    <meta name="geo.position" content="43.5297;5.4474" />
+    <meta name="ICBM" content="43.5297, 5.4474" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://threeb.fr/guide-observabilite-open-source" />
+    <meta property="og:title" content="Guide Observabilité Open-Source - ThreeB" />
+    <meta property="og:description" content="Guide complet observabilité open-source : Prometheus, Grafana, ELK Stack, Jaeger." />
+    <meta property="og:image" content="https://threeb.fr/static/threeb-logo.png" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Structured Data for Educational Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Guide Complet Observabilité Open-Source",
+      "description": "Guide pratique complet pour implémenter une stack d'observabilité open-source avec Prometheus, Grafana, ELK Stack, Jaeger pour monitoring, logging et tracing.",
+      "author": {
+        "@type": "Organization",
+        "name": "ThreeB SAS",
+        "url": "https://threeb.fr"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ThreeB SAS",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://threeb.fr/static/threeb-logo.png"
+        }
+      },
+      "datePublished": "2025-01-01",
+      "dateModified": "2025-01-01",
+      "articleSection": "DevOps Guide",
+      "keywords": [
+        "observabilité",
+        "prometheus",
+        "grafana", 
+        "elk stack",
+        "jaeger",
+        "monitoring",
+        "logging",
+        "tracing",
+        "open source"
+      ],
+      "about": {
+        "@type": "Thing",
+        "name": "Observabilité Open Source"
+      }
+    }
+    </script>
+
+    <!-- Font & styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .guide-header {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 16px;
+        margin: 2rem 0;
+      }
+      .code-block {
+        background: #1f2937;
+        color: #e5e7eb;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+      .architecture-diagram {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem 0;
+        text-align: center;
+      }
+      .tool-card {
+        background: linear-gradient(145deg, #ffffff, #f1f5f9);
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      }
+      .step-number {
+        background: #3b82f6;
+        color: white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-right: 1rem;
+      }
+      .best-practice {
+        background: #dcfce7;
+        border-left: 4px solid #16a34a;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="guide-header">
+      📊 GUIDE COMPLET OBSERVABILITÉ OPEN-SOURCE • PROMETHEUS • GRAFANA • ELK • JAEGER
+    </div>
+
+    <header>
+      <nav aria-label="Navigation principale">
+        <a href="/" aria-label="Retour à l'accueil">Accueil</a>
+        <a href="/#services" aria-label="Voir tous nos services">Services</a>
+        <a href="/#testimonials" aria-label="Voir les témoignages clients">Témoignages</a>
+        <a href="/#about" aria-label="En savoir plus sur ThreeB">À propos</a>
+        <a href="/#contact" aria-label="Nous contacter">Contact</a>
+      </nav>
+      <img src="static/threeb-logo.png" alt="Logo ThreeB - Conseil DevOps et SRE" width="140" height="100" loading="eager" />
+      <h1>Guide Observabilité Open-Source</h1>
+      <p>Monitoring • Logging • Tracing • Performance</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Guide Complet Observabilité Open-Source</h2>
+        <p>
+          <strong>Stack d'observabilité complète avec des outils open-source</strong> : Prometheus pour le monitoring, 
+          Grafana pour la visualisation, ELK Stack pour les logs, Jaeger pour le tracing. Guide pratique 
+          step-by-step pour implémenter une solution d'observabilité production-ready.
+        </p>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>📈 Monitoring Métrique</h3>
+            <p>Prometheus + Grafana pour surveillance temps réel</p>
+          </div>
+          
+          <div class="card">
+            <h3>📋 Log Management</h3>
+            <p>ELK Stack pour centralisation et analyse logs</p>
+          </div>
+          
+          <div class="card">
+            <h3>🔍 Distributed Tracing</h3>
+            <p>Jaeger pour traçage requêtes microservices</p>
+          </div>
+          
+          <div class="card">
+            <h3>🚨 Alerting Intelligent</h3>
+            <p>AlertManager pour notifications contextuelles</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Architecture Observabilité Open-Source</h2>
+        
+        <div class="architecture-diagram">
+          <h3>📊 Stack Observabilité Complète</h3>
+          <p>
+            <strong>Applications</strong> →<br>
+            <strong>Instrumentation</strong> (Prometheus client, Logback, OpenTelemetry) →<br>
+            <strong>Collection</strong> (Prometheus, Fluentd/Filebeat, Jaeger Agent) →<br>
+            <strong>Storage</strong> (Prometheus TSDB, Elasticsearch, Jaeger Storage) →<br>
+            <strong>Visualization</strong> (Grafana, Kibana, Jaeger UI) →<br>
+            <strong>Alerting</strong> (AlertManager, ElastAlert, Custom)
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>1. Monitoring avec Prometheus & Grafana</h2>
+        
+        <div class="tool-card">
+          <h3>🎯 Prometheus - Time Series Database</h3>
+          <p><strong>Installation Docker Compose</strong></p>
+          
+          <div class="code-block">
+version: '3.8'
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+
+volumes:
+  prometheus_data:
+          </div>
+          
+          <p><strong>Configuration prometheus.yml</strong></p>
+          <div class="code-block">
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "alert.rules"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+
+  - job_name: 'application'
+    static_configs:
+      - targets: ['app:8080']
+    metrics_path: '/actuator/prometheus'
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <h3>📊 Grafana - Visualization Platform</h3>
+          <p><strong>Setup Grafana avec Prometheus</strong></p>
+          
+          <div class="code-block">
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    depends_on:
+      - prometheus
+
+volumes:
+  grafana_data:
+          </div>
+
+          <div class="best-practice">
+            <strong>🎯 Dashboards Essentiels :</strong>
+            <ul>
+              <li><strong>System Overview</strong> - CPU, Memory, Disk, Network</li>
+              <li><strong>Application Metrics</strong> - Request rate, Response time, Error rate</li>
+              <li><strong>Business KPIs</strong> - User registrations, Transactions, Revenue</li>
+              <li><strong>Infrastructure</strong> - Kubernetes, Docker, Database performance</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>2. Log Management avec ELK Stack</h2>
+        
+        <div class="tool-card">
+          <h3>🔍 Elasticsearch - Search & Analytics</h3>
+          <p><strong>Configuration Elasticsearch</strong></p>
+          
+          <div class="code-block">
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - xpack.security.enabled=false
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+
+volumes:
+  elasticsearch_data:
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <h3>📥 Logstash - Log Processing</h3>
+          <p><strong>Pipeline Configuration</strong></p>
+          
+          <div class="code-block">
+input {
+  beats {
+    port => 5044
+  }
+  
+  syslog {
+    port => 514
+  }
+}
+
+filter {
+  if [fields][log_type] == "application" {
+    grok {
+      match => { 
+        "message" => "%{TIMESTAMP_ISO8601:timestamp} %{LOGLEVEL:level} %{DATA:logger} - %{GREEDYDATA:msg}" 
+      }
+    }
+    
+    date {
+      match => [ "timestamp", "yyyy-MM-dd HH:mm:ss.SSS" ]
+    }
+  }
+  
+  if [fields][log_type] == "nginx" {
+    grok {
+      match => { 
+        "message" => "%{NGINXACCESS}" 
+      }
+    }
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["elasticsearch:9200"]
+    index => "logs-%{+YYYY.MM.dd}"
+  }
+  
+  stdout { 
+    codec => rubydebug 
+  }
+}
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <h3>📊 Kibana - Log Visualization</h3>
+          <p><strong>Setup Kibana Dashboard</strong></p>
+          
+          <div class="code-block">
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.11.0
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+          </div>
+
+          <div class="best-practice">
+            <strong>📋 Log Management Best Practices :</strong>
+            <ul>
+              <li><strong>Structured Logging</strong> - JSON format, consistent fields</li>
+              <li><strong>Log Levels</strong> - ERROR, WARN, INFO, DEBUG appropriés</li>
+              <li><strong>Correlation IDs</strong> - Traçage requêtes multi-services</li>
+              <li><strong>Retention Policy</strong> - Rotation automatique selon criticité</li>
+              <li><strong>Security</strong> - Anonymisation données sensibles</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>3. Distributed Tracing avec Jaeger</h2>
+        
+        <div class="tool-card">
+          <h3>🔗 Jaeger - Distributed Tracing</h3>
+          <p><strong>All-in-One Jaeger Setup</strong></p>
+          
+          <div class="code-block">
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: jaeger
+    ports:
+      - "16686:16686"  # Jaeger UI
+      - "14268:14268"  # HTTP collector
+      - "6831:6831/udp"  # Agent UDP
+      - "6832:6832/udp"  # Agent UDP
+    environment:
+      - COLLECTOR_ZIPKIN_HOST_PORT=:9411
+      - SPAN_STORAGE_TYPE=memory
+          </div>
+
+          <p><strong>Instrumentation Application Java</strong></p>
+          <div class="code-block">
+&lt;dependency&gt;
+    &lt;groupId&gt;io.opentracing.contrib&lt;/groupId&gt;
+    &lt;artifactId&gt;opentracing-spring-jaeger-web-starter&lt;/artifactId&gt;
+    &lt;version&gt;3.3.1&lt;/version&gt;
+&lt;/dependency&gt;
+
+# application.yml
+opentracing:
+  jaeger:
+    service-name: my-service
+    udp-sender:
+      host: jaeger
+      port: 6831
+    probabilistic-sampler:
+      sampling-rate: 1.0
+          </div>
+
+          <p><strong>Tracing Python avec OpenTelemetry</strong></p>
+          <div class="code-block">
+from opentelemetry import trace
+from opentelemetry.exporter.jaeger.thrift import JaegerExporter
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
+
+# Configuration tracer
+trace.set_tracer_provider(TracerProvider())
+tracer = trace.get_tracer(__name__)
+
+jaeger_exporter = JaegerExporter(
+    agent_host_name="jaeger",
+    agent_port=6831,
+)
+
+span_processor = BatchSpanProcessor(jaeger_exporter)
+trace.get_tracer_provider().add_span_processor(span_processor)
+
+# Usage dans le code
+@tracer.start_as_current_span("process_request")
+def process_request(request):
+    span = trace.get_current_span()
+    span.set_attribute("user.id", request.user_id)
+    # Business logic here
+    return response
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>4. Alerting avec AlertManager</h2>
+        
+        <div class="tool-card">
+          <h3>🚨 AlertManager Configuration</h3>
+          <p><strong>Setup AlertManager</strong></p>
+          
+          <div class="code-block">
+  alertmanager:
+    image: prom/alertmanager:latest
+    container_name: alertmanager
+    ports:
+      - "9093:9093"
+    volumes:
+      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+      - '--storage.path=/alertmanager'
+      - '--web.external-url=http://localhost:9093'
+          </div>
+
+          <p><strong>Configuration alertmanager.yml</strong></p>
+          <div class="code-block">
+global:
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'alerts@company.com'
+  smtp_auth_username: 'alerts@company.com'
+  smtp_auth_password: 'app_password'
+
+route:
+  group_by: ['alertname']
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 1h
+  receiver: 'web.hook'
+  routes:
+  - match:
+      severity: critical
+    receiver: 'critical-alerts'
+
+receivers:
+- name: 'web.hook'
+  webhook_configs:
+  - url: 'http://webhook:8080/alerts'
+
+- name: 'critical-alerts'
+  email_configs:
+  - to: 'devops@company.com'
+    subject: '🚨 Critical Alert: {{ .GroupLabels.alertname }}'
+    body: |
+      {{ range .Alerts }}
+      Alert: {{ .Annotations.summary }}
+      Description: {{ .Annotations.description }}
+      {{ end }}
+  
+  slack_configs:
+  - api_url: 'https://hooks.slack.com/services/...'
+    channel: '#alerts'
+    title: 'Critical Alert'
+    text: '{{ .CommonAnnotations.summary }}'
+          </div>
+
+          <p><strong>Règles d'Alerting Prometheus</strong></p>
+          <div class="code-block">
+groups:
+- name: application.rules
+  rules:
+  - alert: HighErrorRate
+    expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.1
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "High error rate detected"
+      description: "Error rate is {{ $value }} errors per second"
+
+  - alert: HighLatency
+    expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 0.5
+    for: 2m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High latency detected"
+      description: "95th percentile latency is {{ $value }}s"
+
+  - alert: ServiceDown
+    expr: up == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Service {{ $labels.instance }} is down"
+      description: "Service has been down for more than 1 minute"
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>5. Instrumentation Applications</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>☕ Java Spring Boot</h3>
+            <div class="code-block">
+# pom.xml
+&lt;dependency&gt;
+    &lt;groupId&gt;io.micrometer&lt;/groupId&gt;
+    &lt;artifactId&gt;micrometer-registry-prometheus&lt;/artifactId&gt;
+&lt;/dependency&gt;
+
+# application.yml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+            </div>
+          </div>
+          
+          <div class="card">
+            <h3>🐍 Python Flask/Django</h3>
+            <div class="code-block">
+# requirements.txt
+prometheus_client==0.16.0
+prometheus_flask_exporter==0.22.4
+
+# app.py
+from prometheus_flask_exporter import PrometheusMetrics
+
+app = Flask(__name__)
+metrics = PrometheusMetrics(app)
+
+# Custom metrics
+from prometheus_client import Counter, Histogram
+
+REQUEST_COUNT = Counter(
+    'app_requests_total', 'Total requests'
+)
+
+REQUEST_LATENCY = Histogram(
+    'app_request_duration_seconds', 'Request latency'
+)
+            </div>
+          </div>
+          
+          <div class="card">
+            <h3>🟢 Node.js Express</h3>
+            <div class="code-block">
+// package.json
+"prom-client": "^14.2.0"
+
+// app.js
+const client = require('prom-client');
+const express = require('express');
+
+// Default metrics
+client.collectDefaultMetrics();
+
+// Custom metrics
+const httpRequestDuration = new client.Histogram({
+  name: 'http_request_duration_seconds',
+  help: 'Duration of HTTP requests in seconds',
+  labelNames: ['method', 'route', 'status_code']
+});
+
+// Middleware
+app.use((req, res, next) => {
+  const start = Date.now();
+  res.on('finish', () => {
+    const duration = (Date.now() - start) / 1000;
+    httpRequestDuration
+      .labels(req.method, req.route?.path, res.statusCode)
+      .observe(duration);
+  });
+  next();
+});
+            </div>
+          </div>
+          
+          <div class="card">
+            <h3>🐹 Go Gin Framework</h3>
+            <div class="code-block">
+// go.mod
+github.com/prometheus/client_golang v1.16.0
+
+// main.go
+import (
+    "github.com/prometheus/client_golang/prometheus"
+    "github.com/prometheus/client_golang/prometheus/promhttp"
+)
+
+var (
+    httpDuration = prometheus.NewHistogramVec(
+        prometheus.HistogramOpts{
+            Name: "http_request_duration_seconds",
+            Help: "Duration of HTTP requests.",
+        },
+        []string{"path", "method", "status"},
+    )
+)
+
+func init() {
+    prometheus.MustRegister(httpDuration)
+}
+
+// Middleware
+func prometheusMiddleware() gin.HandlerFunc {
+    return gin.HandlerFunc(func(c *gin.Context) {
+        start := time.Now()
+        c.Next()
+        duration := time.Since(start)
+        httpDuration.WithLabelValues(
+            c.FullPath(), c.Request.Method, 
+            fmt.Sprintf("%d", c.Writer.Status()),
+        ).Observe(duration.Seconds())
+    })
+}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>6. Kubernetes Observability</h2>
+        
+        <div class="tool-card">
+          <h3>☸️ Kubernetes Monitoring Stack</h3>
+          <p><strong>Prometheus Operator avec Helm</strong></p>
+          
+          <div class="code-block">
+# Installation Prometheus Operator
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+helm install prometheus prometheus-community/kube-prometheus-stack \
+  --namespace monitoring \
+  --create-namespace \
+  --set grafana.adminPassword=admin123 \
+  --set alertmanager.config.global.slack_api_url=https://hooks.slack.com/...
+
+# Port forward pour accès
+kubectl port-forward -n monitoring svc/prometheus-grafana 3000:80
+kubectl port-forward -n monitoring svc/prometheus-kube-prometheus-prometheus 9090:9090
+          </div>
+
+          <p><strong>ServiceMonitor pour Applications</strong></p>
+          <div class="code-block">
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: my-app-monitor
+  namespace: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: my-app
+  endpoints:
+  - port: metrics
+    path: /metrics
+    interval: 15s
+    
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+  labels:
+    app: my-app
+spec:
+  ports:
+  - name: metrics
+    port: 8080
+    targetPort: 8080
+  selector:
+    app: my-app
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>7. Dashboards & Visualizations</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>📊 Golden Signals Dashboard</h3>
+            <p><strong>4 métriques essentielles SRE</strong></p>
+            <ul>
+              <li><strong>Latency</strong> - Temps de réponse P50/P95/P99</li>
+              <li><strong>Traffic</strong> - Requests per second</li>
+              <li><strong>Errors</strong> - Error rate percentage</li>
+              <li><strong>Saturation</strong> - Resource utilization</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🎯 Business Metrics Dashboard</h3>
+            <p><strong>KPIs orientés business</strong></p>
+            <ul>
+              <li><strong>User Activity</strong> - Active users, sessions</li>
+              <li><strong>Conversions</strong> - Sign-ups, purchases</li>
+              <li><strong>Revenue</strong> - Revenue per minute</li>
+              <li><strong>Feature Usage</strong> - Feature adoption rates</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🔧 Infrastructure Dashboard</h3>
+            <p><strong>Métriques infrastructure</strong></p>
+            <ul>
+              <li><strong>System Resources</strong> - CPU, Memory, Disk</li>
+              <li><strong>Network</strong> - Bandwidth, connections</li>
+              <li><strong>Database</strong> - Connections, query time</li>
+              <li><strong>Cache</strong> - Hit ratio, evictions</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🚨 Alerting Dashboard</h3>
+            <p><strong>Vue d'ensemble alertes</strong></p>
+            <ul>
+              <li><strong>Alert Status</strong> - Active, resolved alerts</li>
+              <li><strong>MTTR</strong> - Mean time to resolution</li>
+              <li><strong>Alert Trends</strong> - Frequency par service</li>
+              <li><strong>Escalations</strong> - Alert escalation paths</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>8. Best Practices Observabilité</h2>
+        
+        <div class="best-practice">
+          <h3>🎯 Stratégie Métriques</h3>
+          <ul>
+            <li><strong>USE Method</strong> - Utilization, Saturation, Errors pour resources</li>
+            <li><strong>RED Method</strong> - Rate, Errors, Duration pour services</li>
+            <li><strong>Cardinality Control</strong> - Éviter labels haute cardinalité</li>
+            <li><strong>Business Alignment</strong> - Métriques alignées objectifs business</li>
+          </ul>
+        </div>
+
+        <div class="best-practice">
+          <h3>📋 Log Management</h3>
+          <ul>
+            <li><strong>Structured Logging</strong> - Format JSON, champs standardisés</li>
+            <li><strong>Correlation IDs</strong> - Traçage requests distribuées</li>
+            <li><strong>Log Levels</strong> - Usage approprié ERROR/WARN/INFO/DEBUG</li>
+            <li><strong>Sensitive Data</strong> - Anonymisation automatique</li>
+          </ul>
+        </div>
+
+        <div class="best-practice">
+          <h3>🔍 Distributed Tracing</h3>
+          <ul>
+            <li><strong>Sampling Strategy</strong> - Échantillonnage intelligent</li>
+            <li><strong>Context Propagation</strong> - Headers standardisés</li>
+            <li><strong>Span Enrichment</strong> - Tags et annotations pertinents</li>
+            <li><strong>Performance Impact</strong> - Minimal overhead production</li>
+          </ul>
+        </div>
+
+        <div class="best-practice">
+          <h3>🚨 Alerting Strategy</h3>
+          <ul>
+            <li><strong>Symptom-Based</strong> - Alertes sur impact utilisateur</li>
+            <li><strong>Actionable</strong> - Chaque alerte = action claire</li>
+            <li><strong>Noise Reduction</strong> - Éviter alert fatigue</li>
+            <li><strong>Escalation</strong> - Paths clairs selon criticité</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Technologies Stack Complète</h2>
+        
+        <div class="logos-container">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Prometheus" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch" loading="lazy" />
+          <img src="https://avatars.githubusercontent.com/u/3380462?s=200&v=4" alt="Kibana" loading="lazy" style="border-radius: 6px;" />
+          <img src="https://avatars.githubusercontent.com/u/19816014?s=200&v=4" alt="Jaeger" loading="lazy" style="border-radius: 6px;" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" loading="lazy" />
+        </div>
+        <p>
+          <strong>Monitoring :</strong> Prometheus, Grafana, AlertManager, Node Exporter<br>
+          <strong>Logging :</strong> Elasticsearch, Logstash, Kibana, Fluentd, Filebeat<br>
+          <strong>Tracing :</strong> Jaeger, Zipkin, OpenTelemetry, OpenTracing<br>
+          <strong>Platforms :</strong> Kubernetes, Docker, Cloud Native<br>
+          <strong>Languages :</strong> Support Java, Python, Go, Node.js, .NET
+        </p>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Implémentation Observabilité Expert ?</h2>
+        <p>
+          Besoin d'aide pour votre stack observabilité ? <strong>Consultation gratuite de 45 minutes</strong> 
+          pour analyser vos besoins et concevoir l'architecture monitoring optimale.
+        </p>
+        <a class="button" href="mailto:contact@threeb.fr?subject=Guide%20Observabilité%20Open-Source%20-%20Consultation%2045min">
+          📊 Consultation Observabilité 45min
+        </a>
+        <p><small>
+          <strong>Setup complet</strong> • Formation équipes • Best practices<br>
+          Prometheus • Grafana • ELK • Jaeger • Production-ready
+        </small></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ThreeB SAS. Tous droits réservés.</p>
+      <nav aria-label="Navigation footer">
+        <a href="/">Accueil</a>
+        <a href="/#services">Services</a>
+        <a href="/#about">À propos</a>
+        <a href="mailto:contact@threeb.fr">Contact</a>
+      </nav>
+    </footer>
+  </body>
+</html>

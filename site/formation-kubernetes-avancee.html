@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TD4YYM76QZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TD4YYM76QZ');
+    </script>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formation Kubernetes Avancée | ThreeB - CKA CKAD Operator Helm GitOps Aix-en-Provence</title>
+    <meta name="description" content="Formation Kubernetes avancée à Aix-en-Provence : CKA, CKAD, Kubernetes Operator, Helm, GitOps, Security. Expert instructeur certifié. Hands-on production." />
+    <meta name="author" content="ThreeB SAS" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://threeb.fr/formation-kubernetes-avancee" />
+    
+    <!-- Geo-targeting meta tags -->
+    <meta name="geo.region" content="FR-13" />
+    <meta name="geo.placename" content="Aix-en-Provence" />
+    <meta name="geo.position" content="43.5297;5.4474" />
+    <meta name="ICBM" content="43.5297, 5.4474" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://threeb.fr/formation-kubernetes-avancee" />
+    <meta property="og:title" content="Formation Kubernetes Avancée - ThreeB" />
+    <meta property="og:description" content="Formation Kubernetes avancée : CKA, CKAD, Operator, Helm, GitOps, Security." />
+    <meta property="og:image" content="https://threeb.fr/static/threeb-logo.png" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Structured Data for Educational Course -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Formation Kubernetes Avancée",
+      "description": "Formation Kubernetes avancée intensive : CKA/CKAD certification, Kubernetes Operators, Helm, GitOps, Security, Performance Tuning pour environnements production.",
+      "provider": {
+        "@type": "Organization",
+        "name": "ThreeB SAS",
+        "url": "https://threeb.fr",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Aix-en-Provence",
+          "addressRegion": "Provence-Alpes-Côte d'Azur",
+          "addressCountry": "FR"
+        }
+      },
+      "educationalLevel": "Advanced",
+      "courseMode": ["On-site", "Online"],
+      "hasCourseInstance": [
+        {
+          "@type": "CourseInstance",
+          "courseMode": "On-site",
+          "location": {
+            "@type": "Place",
+            "name": "Aix-en-Provence",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Aix-en-Provence",
+              "addressRegion": "Provence-Alpes-Côte d'Azur",
+              "addressCountry": "FR"
+            }
+          }
+        }
+      ],
+      "teaches": [
+        "Kubernetes Advanced Administration",
+        "CKA/CKAD Certification",
+        "Kubernetes Operators Development", 
+        "Helm Charts Advanced",
+        "GitOps with ArgoCD",
+        "Kubernetes Security",
+        "Performance Tuning"
+      ]
+    }
+    </script>
+
+    <!-- Font & styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .advanced-banner {
+        background: linear-gradient(135deg, #1f2937, #374151);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 16px;
+        margin: 2rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .advanced-banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 40%, rgba(59, 130, 246, 0.1) 60%);
+      }
+      .certification-card {
+        background: linear-gradient(145deg, #dbeafe, #bfdbfe);
+        border: 2px solid #3b82f6;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 1rem 0;
+        position: relative;
+      }
+      .certification-card::before {
+        content: "🏆";
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: #3b82f6;
+        color: white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+      }
+      .lab-exercise {
+        background: #f0fdf4;
+        border-left: 4px solid #16a34a;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 1rem 0;
+      }
+      .command-block {
+        background: #1f2937;
+        color: #10b981;
+        padding: 1rem;
+        border-radius: 8px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        margin: 1rem 0;
+        overflow-x: auto;
+      }
+      .difficulty-level {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+      }
+      .level-advanced { background: #fee2e2; color: #dc2626; }
+      .level-expert { background: #f3e8ff; color: #7c3aed; }
+      .level-master { background: #fef3c7; color: #d97706; }
+    </style>
+  </head>
+
+  <body>
+    <div class="advanced-banner">
+      ☸️ FORMATION KUBERNETES AVANCÉE • CKA/CKAD • OPERATORS • PRODUCTION-READY
+    </div>
+
+    <header>
+      <nav aria-label="Navigation principale">
+        <a href="/" aria-label="Retour à l'accueil">Accueil</a>
+        <a href="/#services" aria-label="Voir tous nos services">Services</a>
+        <a href="/#testimonials" aria-label="Voir les témoignages clients">Témoignages</a>
+        <a href="/#about" aria-label="En savoir plus sur ThreeB">À propos</a>
+        <a href="/#contact" aria-label="Nous contacter">Contact</a>
+      </nav>
+      <img src="static/threeb-logo.png" alt="Logo ThreeB - Conseil DevOps et SRE" width="140" height="100" loading="eager" />
+      <h1>Formation Kubernetes Avancée</h1>
+      <p>CKA/CKAD • Operators • Production-Ready</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Formation Kubernetes Avancée Production-Ready</h2>
+        <p>
+          <strong>Formation Kubernetes niveau expert</strong> pour administrateurs et développeurs expérimentés. 
+          Maîtrisez l'administration avancée, développement d'Operators, GitOps, sécurité et performance tuning. 
+          <strong>Préparation certifications CKA/CKAD incluse</strong> avec labs intensifs sur clusters production.
+        </p>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>🏆 Certification CKA/CKAD</h3>
+            <div class="difficulty-level level-advanced">Advanced</div>
+            <p>Préparation intensive certifications officielles</p>
+          </div>
+          
+          <div class="card">
+            <h3>⚙️ Kubernetes Operators</h3>
+            <div class="difficulty-level level-expert">Expert</div>
+            <p>Développement d'Operators personnalisés avec SDK</p>
+          </div>
+          
+          <div class="card">
+            <h3>🔐 Security Hardening</h3>
+            <div class="difficulty-level level-expert">Expert</div>
+            <p>Sécurisation clusters production et compliance</p>
+          </div>
+          
+          <div class="card">
+            <h3>📈 Performance Tuning</h3>
+            <div class="difficulty-level level-master">Master</div>
+            <p>Optimisation performance et troubleshooting</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Parcours Certification CKA/CKAD</h2>
+        
+        <div class="certification-card">
+          <h3>🎯 Certified Kubernetes Administrator (CKA)</h3>
+          <div class="difficulty-level level-advanced">5 jours intensifs</div>
+          <p>
+            <strong>Administration cluster Kubernetes production</strong> : installation, configuration, 
+            networking, security, troubleshooting, backup/restore. Préparation exam officiel 
+            avec 100% de labs pratiques.
+          </p>
+          
+          <div class="lab-exercise">
+            <h4>🔧 Labs CKA Intensifs</h4>
+            <ul>
+              <li><strong>Cluster Setup</strong> - Installation kubeadm, multi-master HA</li>
+              <li><strong>RBAC Security</strong> - Users, roles, service accounts</li>
+              <li><strong>Networking</strong> - CNI, Network Policies, Ingress</li>
+              <li><strong>Storage</strong> - PV/PVC, StorageClasses, CSI drivers</li>
+              <li><strong>Troubleshooting</strong> - Debugging pods, services, networking</li>
+              <li><strong>Backup/Restore</strong> - etcd backup, disaster recovery</li>
+            </ul>
+          </div>
+
+          <div class="command-block">
+# Exemple lab CKA : Setup cluster multi-master
+kubeadm init --control-plane-endpoint="k8s-master.local:6443" \
+  --upload-certs --pod-network-cidr=10.244.0.0/16
+
+# Join additional masters
+kubeadm join k8s-master.local:6443 --token xxx \
+  --discovery-token-ca-cert-hash sha256:xxx \
+  --control-plane --certificate-key xxx
+
+# Install CNI
+kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+          </div>
+        </div>
+
+        <div class="certification-card">
+          <h3>👨‍💻 Certified Kubernetes Application Developer (CKAD)</h3>
+          <div class="difficulty-level level-advanced">4 jours intensifs</div>
+          <p>
+            <strong>Développement applications cloud-native</strong> : Pod design, configuration, 
+            multi-container patterns, observability, services, ingress. Focus développeur 
+            avec déploiements avancés.
+          </p>
+          
+          <div class="lab-exercise">
+            <h4>🚀 Labs CKAD Pratiques</h4>
+            <ul>
+              <li><strong>Pod Design</strong> - Multi-container, init containers, sidecar</li>
+              <li><strong>Configuration</strong> - ConfigMaps, Secrets, environment variables</li>
+              <li><strong>Observability</strong> - Health checks, monitoring, logging</li>
+              <li><strong>Services</strong> - ClusterIP, NodePort, LoadBalancer, Ingress</li>
+              <li><strong>Deployments</strong> - Rolling updates, blue/green, canary</li>
+              <li><strong>Jobs</strong> - CronJobs, batch processing, parallel jobs</li>
+            </ul>
+          </div>
+
+          <div class="command-block">
+# Exemple lab CKAD : Multi-container pod avec sidecar
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multi-container-pod
+spec:
+  containers:
+  - name: main-app
+    image: nginx:alpine
+    volumeMounts:
+    - name: shared-data
+      mountPath: /usr/share/nginx/html
+  - name: sidecar-logger
+    image: busybox
+    command: ['sh', '-c', 'while true; do echo "$(date): Processing..." >> /var/log/app.log; sleep 30; done']
+    volumeMounts:
+    - name: shared-data
+      mountPath: /var/log
+  volumes:
+  - name: shared-data
+    emptyDir: {}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Développement Kubernetes Operators</h2>
+        
+        <div class="services-grid">
+          <article class="card">
+            <h3>🛠️ Operator Framework</h3>
+            <div class="difficulty-level level-expert">Expert Level</div>
+            <p>
+              <strong>Maîtrise Operator SDK</strong> : développement d'Operators 
+              personnalisés avec Go, Ansible ou Helm. Custom Resources, 
+              Controllers, Webhooks, lifecycle management.
+            </p>
+            
+            <div class="lab-exercise">
+              <h4>🔨 Lab : Développement Operator Database</h4>
+              <div class="command-block">
+# Initialisation projet Operator
+operator-sdk init --domain=company.com --repo=github.com/user/database-operator
+
+# Création API et Controller
+operator-sdk create api --group=db --version=v1 --kind=Database --resource --controller
+
+# Structure générée
+api/v1/database_types.go      # Custom Resource Definition
+controllers/database_controller.go  # Reconciliation logic
+config/                       # Manifests et configuration
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>🔄 Controller Patterns</h3>
+            <div class="difficulty-level level-expert">Expert Level</div>
+            <p>
+              <strong>Patterns avancés Controllers</strong> : reconciliation loops, 
+              finalizers, owner references, watches, events. Design patterns 
+              pour Operators robustes et performants.
+            </p>
+
+            <div class="lab-exercise">
+              <h4>⚡ Lab : Controller Reconciliation</h4>
+              <div class="command-block">
+func (r *DatabaseReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
+    log := r.Log.WithValues("database", req.NamespacedName)
+
+    // Fetch Database instance
+    var database dbv1.Database
+    if err := r.Get(ctx, req.NamespacedName, &database); err != nil {
+        return ctrl.Result{}, client.IgnoreNotFound(err)
+    }
+
+    // Handle deletion
+    if !database.DeletionTimestamp.IsZero() {
+        return r.handleDeletion(ctx, &database)
+    }
+
+    // Ensure finalizer
+    if !controllerutil.ContainsFinalizer(&database, dbFinalizer) {
+        controllerutil.AddFinalizer(&database, dbFinalizer)
+        return ctrl.Result{}, r.Update(ctx, &database)
+    }
+
+    // Reconcile desired state
+    return r.reconcileDatabase(ctx, &database)
+}
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>🎛️ Custom Resources</h3>
+            <div class="difficulty-level level-advanced">Advanced</div>
+            <p>
+              <strong>CRD design avancé</strong> : validation schemas, conversion 
+              webhooks, subresources, printer columns. API versioning et 
+              backward compatibility.
+            </p>
+
+            <div class="lab-exercise">
+              <h4>📋 Lab : CRD avec Validation</h4>
+              <div class="command-block">
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: databases.db.company.com
+spec:
+  group: db.company.com
+  versions:
+  - name: v1
+    served: true
+    storage: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              replicas:
+                type: integer
+                minimum: 1
+                maximum: 10
+              version:
+                type: string
+                enum: ["12", "13", "14", "15"]
+              storage:
+                type: string
+                pattern: '^[0-9]+Gi$'
+            required: ["replicas", "version", "storage"]
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>🔧 Operator Lifecycle</h3>
+            <div class="difficulty-level level-expert">Expert Level</div>
+            <p>
+              <strong>OLM (Operator Lifecycle Manager)</strong> : packaging, 
+              distribution, updates automatiques. CSV manifests, bundle 
+              creation, catalog management.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>GitOps avec ArgoCD</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>🔄 ArgoCD Advanced</h3>
+            <div class="difficulty-level level-advanced">Advanced</div>
+            <p>
+              <strong>GitOps production-ready</strong> : ArgoCD setup, 
+              multi-cluster management, application sets, sync policies, 
+              custom health checks, RBAC granulaire.
+            </p>
+
+            <div class="lab-exercise">
+              <h4>📦 Lab : Application ArgoCD Multi-Environment</h4>
+              <div class="command-block">
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-production
+  namespace: argocd
+spec:
+  project: production
+  source:
+    repoURL: https://github.com/company/myapp-config
+    targetRevision: HEAD
+    path: overlays/production
+  destination:
+    server: https://prod-cluster-api.company.com
+    namespace: myapp-prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>🎯 Kustomize Advanced</h3>
+            <div class="difficulty-level level-advanced">Advanced</div>
+            <p>
+              <strong>Configuration management</strong> : overlays complexes, 
+              transformers, generators, patches strategiques. Structure 
+              multi-environnements maintenant.
+            </p>
+
+            <div class="lab-exercise">
+              <h4>⚙️ Lab : Kustomize Multi-Environment</h4>
+              <div class="command-block">
+# Base structure
+base/
+├── kustomization.yaml
+├── deployment.yaml
+├── service.yaml
+└── configmap.yaml
+
+overlays/
+├── development/
+│   ├── kustomization.yaml
+│   └── patches/
+├── staging/
+│   ├── kustomization.yaml
+│   └── patches/
+└── production/
+    ├── kustomization.yaml
+    ├── patches/
+    └── sealed-secrets/
+
+# kustomization.yaml production
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../base
+patchesStrategicMerge:
+- patches/replica-count.yaml
+- patches/resource-limits.yaml
+images:
+- name: myapp
+  newTag: v1.2.3
+replicas:
+- name: myapp-deployment
+  count: 5
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sécurité Kubernetes Avancée</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>🔐 Security Hardening</h3>
+            <div class="difficulty-level level-expert">Expert Level</div>
+            <p>
+              <strong>Sécurisation cluster production</strong> : Pod Security 
+              Standards, Network Policies, RBAC granulaire, admission controllers, 
+              secret management avec Vault.
+            </p>
+
+            <div class="lab-exercise">
+              <h4>🛡️ Lab : Pod Security Policy</h4>
+              <div class="command-block">
+apiVersion: policy/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: restricted
+spec:
+  privileged: false
+  allowPrivilegeEscalation: false
+  requiredDropCapabilities:
+    - ALL
+  volumes:
+    - 'configMap'
+    - 'emptyDir'
+    - 'projected'
+    - 'secret'
+    - 'downwardAPI'
+    - 'persistentVolumeClaim'
+  runAsUser:
+    rule: 'MustRunAsNonRoot'
+  seLinux:
+    rule: 'RunAsAny'
+  fsGroup:
+    rule: 'RunAsAny'
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>🌐 Network Security</h3>
+            <div class="difficulty-level level-advanced">Advanced</div>
+            <p>
+              <strong>Network Policies avancées</strong> : micro-segmentation, 
+              ingress/egress rules, CNI-specific features, service mesh 
+              integration avec Istio.
+            </p>
+
+            <div class="lab-exercise">
+              <h4>🔒 Lab : Network Policy Zero-Trust</h4>
+              <div class="command-block">
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-all-default
+  namespace: production
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-frontend-to-backend
+  namespace: production
+spec:
+  podSelector:
+    matchLabels:
+      app: backend
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: frontend
+    ports:
+    - protocol: TCP
+      port: 8080
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Performance Tuning & Monitoring</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>📊 Cluster Monitoring</h3>
+            <div class="difficulty-level level-advanced">Advanced</div>
+            <p>
+              <strong>Observabilité cluster complète</strong> : Prometheus Operator, 
+              Grafana dashboards, custom metrics, SLI/SLO definition, 
+              alerting rules production.
+            </p>
+
+            <div class="lab-exercise">
+              <h4>🎯 Lab : Custom Metrics avec Prometheus</h4>
+              <div class="command-block">
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: myapp-metrics
+  labels:
+    app: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  endpoints:
+  - port: metrics
+    interval: 15s
+    path: /metrics
+    honorLabels: true
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: myapp-alerts
+spec:
+  groups:
+  - name: myapp.rules
+    rules:
+    - alert: MyAppHighLatency
+      expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{job="myapp"}[5m])) > 0.5
+      for: 5m
+      labels:
+        severity: warning
+      annotations:
+        summary: "MyApp high latency detected"
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>⚡ Performance Optimization</h3>
+            <div class="difficulty-level level-master">Master Level</div>
+            <p>
+              <strong>Tuning performance cluster</strong> : resource management, 
+              QoS classes, HPA/VPA configuration, cluster autoscaling, 
+              node affinity et scheduling.
+            </p>
+
+            <div class="lab-exercise">
+              <h4>🚀 Lab : Auto Scaling Advanced</h4>
+              <div class="command-block">
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: myapp-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: myapp
+  minReplicas: 3
+  maxReplicas: 100
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+  - type: Pods
+    pods:
+      metric:
+        name: http_requests_per_second
+      target:
+        type: AverageValue
+        averageValue: "100"
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 60
+      policies:
+      - type: Percent
+        value: 100
+        periodSeconds: 15
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+      - type: Percent
+        value: 10
+        periodSeconds: 60
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Disaster Recovery & Backup</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>💾 Backup Strategies</h3>
+            <div class="difficulty-level level-advanced">Advanced</div>
+            <p>
+              <strong>Stratégies backup production</strong> : etcd backup/restore, 
+              Velero pour applications, volume snapshots, cross-region 
+              disaster recovery.
+            </p>
+
+            <div class="lab-exercise">
+              <h4>🔄 Lab : Velero Backup Automation</h4>
+              <div class="command-block">
+# Installation Velero avec AWS S3
+velero install \
+    --provider aws \
+    --plugins velero/velero-plugin-for-aws:v1.8.0 \
+    --bucket velero-backups-prod \
+    --backup-location-config region=eu-west-1 \
+    --snapshot-location-config region=eu-west-1
+
+# Backup Schedule automatique
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: daily-backup
+spec:
+  schedule: "0 2 * * *"  # Daily at 2 AM
+  template:
+    includeNamespaces:
+    - production
+    - staging
+    excludeResources:
+    - secrets
+    - events
+    ttl: 720h0m0s  # 30 days retention
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>🔧 Troubleshooting Expert</h3>
+            <div class="difficulty-level level-master">Master Level</div>
+            <p>
+              <strong>Debugging avancé clusters</strong> : network debugging, 
+              performance profiling, resource analysis, log correlation, 
+              forensics post-incident.
+            </p>
+
+            <div class="lab-exercise">
+              <h4>🔍 Lab : Network Debugging Tools</h4>
+              <div class="command-block">
+# Debug pod network connectivity
+kubectl run netshoot --rm -i --tty --image nicolaka/netshoot -- /bin/bash
+
+# Inside netshoot pod:
+# Test DNS resolution
+nslookup kubernetes.default.svc.cluster.local
+
+# Test service connectivity
+curl -v http://myservice.mynamespace.svc.cluster.local:8080/health
+
+# Network tracing
+traceroute myservice.mynamespace.svc.cluster.local
+
+# Port scanning
+nmap -p 8080 myservice.mynamespace.svc.cluster.local
+
+# Check iptables rules (on node)
+iptables -t nat -L KUBE-SERVICES
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Prérequis & Public Expert</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>👨‍💼 Public Cible Expert</h3>
+            <ul>
+              <li><strong>Kubernetes Administrators</strong> - 2+ ans expérience</li>
+              <li><strong>Platform Engineers</strong> - Infrastructure moderne</li>
+              <li><strong>DevOps Engineers</strong> - Pratique container orchestration</li>
+              <li><strong>Site Reliability Engineers</strong> - Production readiness</li>
+              <li><strong>Cloud Architects</strong> - Kubernetes at scale</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🔧 Prérequis Techniques</h3>
+            <ul>
+              <li><strong>Kubernetes basics</strong> - Pods, Services, Deployments</li>
+              <li><strong>Container experience</strong> - Docker, registry management</li>
+              <li><strong>Linux administration</strong> - Command line, networking</li>
+              <li><strong>YAML/JSON</strong> - Configuration manifests</li>
+              <li><strong>Git workflow</strong> - Branching, merging, conflict resolution</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🎯 Objectifs Formation</h3>
+            <ul>
+              <li><strong>CKA/CKAD Certification</strong> - Preparation intensive</li>
+              <li><strong>Production Readiness</strong> - Clusters enterprise</li>
+              <li><strong>Operator Development</strong> - Custom automation</li>
+              <li><strong>Security Hardening</strong> - Zero-trust principles</li>
+              <li><strong>Performance Mastery</strong> - Optimization at scale</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>📈 Résultats Attendus</h3>
+            <ul>
+              <li><strong>Expert Kubernetes</strong> - Administration production</li>
+              <li><strong>Certified Professional</strong> - CKA/CKAD validated</li>
+              <li><strong>Operator Developer</strong> - Custom controllers</li>
+              <li><strong>Security Specialist</strong> - Hardened deployments</li>
+              <li><strong>Performance Engineer</strong> - Optimized workloads</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Technologies & Outils</h2>
+        
+        <div class="logos-container">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="Go" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/helm/helm-original.svg" alt="Helm" loading="lazy" />
+          <img src="https://avatars.githubusercontent.com/u/30269780?s=200&v=4" alt="ArgoCD" loading="lazy" style="border-radius: 6px;" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Prometheus" loading="lazy" />
+          <img src="https://avatars.githubusercontent.com/u/28916?s=200&v=4" alt="Istio" loading="lazy" style="border-radius: 6px;" />
+        </div>
+        <p>
+          <strong>Core Technologies :</strong> Kubernetes, Docker, containerd, CRI-O<br>
+          <strong>Development :</strong> Go, Operator SDK, Kubebuilder, Custom Controllers<br>
+          <strong>GitOps :</strong> ArgoCD, Flux, Kustomize, Helm, Git workflows<br>
+          <strong>Security :</strong> Pod Security Standards, OPA/Gatekeeper, Falco<br>
+          <strong>Monitoring :</strong> Prometheus, Grafana, Jaeger, OpenTelemetry<br>
+          <strong>Cloud Platforms :</strong> EKS, AKS, GKE, OpenShift, Rancher
+        </p>
+      </section>
+
+      <section>
+        <h2>Tarification Formation Avancée</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>🏆 CKA/CKAD Preparation</h3>
+            <p>
+              <strong>3 500€ HT/personne</strong><br>
+              • 5 jours formation intensive<br>
+              • Labs 100% hands-on<br>
+              • Exam voucher inclus<br>
+              • Support certification 3 mois<br>
+              • Retry gratuit si échec
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3>⚙️ Kubernetes Operators Master</h3>
+            <p>
+              <strong>4 200€ HT/personne</strong><br>
+              • 6 jours développement intensif<br>
+              • Operator SDK mastery<br>
+              • Custom Controllers Go<br>
+              • Production deployment<br>
+              • Code review et mentoring
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3>🎯 Formation Équipe Avancée</h3>
+            <p>
+              <strong>25 000€ HT/session</strong><br>
+              • Programme sur-mesure 8-12 jours<br>
+              • 6-10 participants maximum<br>
+              • Architecture existante focus<br>
+              • Production readiness<br>
+              • Support 6 mois post-formation
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Formation Kubernetes Expert ?</h2>
+        <p>
+          Niveau expert requis ! <strong>Assessment technique gratuit de 30 minutes</strong> 
+          pour valider vos prérequis et personnaliser le parcours formation optimal.
+        </p>
+        <a class="button" href="mailto:contact@threeb.fr?subject=Formation%20Kubernetes%20Avancée%20-%20Assessment%2030min">
+          ☸️ Assessment Technique 30min
+        </a>
+        <p><small>
+          <strong>Niveau expert uniquement</strong> • CKA/CKAD preparation<br>
+          Operators • GitOps • Security • Performance • Production-Ready
+        </small></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ThreeB SAS. Tous droits réservés.</p>
+      <nav aria-label="Navigation footer">
+        <a href="/">Accueil</a>
+        <a href="/#services">Services</a>
+        <a href="/#about">À propos</a>
+        <a href="mailto:contact@threeb.fr">Contact</a>
+      </nav>
+    </footer>
+  </body>
+</html>

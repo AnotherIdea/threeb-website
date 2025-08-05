@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://threeb.fr/sitemap.xml
+
+# Crawl-delay pour éviter la surcharge
+Crawl-delay: 1
+
+# Bloque l'accès aux fichiers sensibles
+Disallow: /private/
+Disallow: /*.log$
+Disallow: /tmp/

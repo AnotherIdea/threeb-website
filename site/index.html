@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TD4YYM76QZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TD4YYM76QZ');
+    </script>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThreeB – Conseil DevOps & SRE | Infrastructure Cloud Azure AWS | Terraform Ansible</title>
+    <meta name="description" content="ThreeB : Expert DevOps & SRE pour votre transformation digitale. Infrastructure as Code, CI/CD, Observabilité, Cloud Azure/AWS. +10 ans d'expérience. Contactez-nous !" />
+    <!-- Geo-targeting meta tags -->
+    <meta name="geo.region" content="FR-13" />
+    <meta name="geo.placename" content="Aix-en-Provence" />
+    <meta name="geo.position" content="43.5297;5.4474" />
+    <meta name="ICBM" content="43.5297, 5.4474" />
+    <meta name="author" content="ThreeB SAS" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://threeb.fr/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://threeb.fr/" />
+    <meta property="og:title" content="ThreeB – Conseil DevOps & SRE | Infrastructure Cloud" />
+    <meta property="og:description" content="Expert DevOps & SRE pour votre transformation digitale. Infrastructure as Code, CI/CD, Observabilité, Cloud Azure/AWS." />
+    <meta property="og:image" content="https://threeb.fr/static/threeb-logo.png" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="ThreeB" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://threeb.fr/" />
+    <meta property="twitter:title" content="ThreeB – Conseil DevOps & SRE" />
+    <meta property="twitter:description" content="Expert DevOps & SRE pour votre transformation digitale" />
+    <meta property="twitter:image" content="https://threeb.fr/static/threeb-logo.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ThreeB SAS",
+      "url": "https://threeb.fr",
+      "logo": "https://threeb.fr/static/threeb-logo.png",
+      "description": "Société de conseil spécialisée dans la transformation DevOps et la fiabilité des systèmes",
+      "foundingDate": "2024",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "",
+        "contactType": "customer service",
+        "email": "contact@threeb.fr"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Aix-en-Provence",
+        "addressRegion": "Provence-Alpes-Côte d'Azur",
+        "postalCode": "13100",
+        "addressCountry": "FR"
+      },
+      "sameAs": [],
+      "priceRange": "€€€",
+      "paymentAccepted": "Cash, Credit Card, Bank transfer",
+      "currenciesAccepted": "EUR",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "12"
+      },
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "43.5297",
+          "longitude": "5.4474"
+        },
+        "geoRadius": "50000"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Aix-en-Provence"},
+        {"@type": "City", "name": "Marseille"},
+        {"@type": "AdministrativeArea", "name": "Provence-Alpes-Côte d'Azur"},
+        {"@type": "Country", "name": "France"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services DevOps & SRE",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Infrastructure as Code",
+              "description": "Mise en place d'environnements reproductibles avec Terraform et Ansible"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "CI/CD Modernes",
+              "description": "Automatisation des pipelines avec GitLab, Azure DevOps, GitHub"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Observabilité & Monitoring",
+              "description": "Solutions de monitoring avec Prometheus, Grafana, ELK"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fiabilité des Systèmes",
+              "description": "Optimisation SLA/SLO et pratiques SRE avec Kubernetes"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Expertise Cloud",
+              "description": "Architecture cloud native sur Azure et AWS"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Combien de temps prend une migration DevOps ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La durée varie selon la complexité de votre infrastructure actuelle. Une migration simple prend 2-3 mois, tandis qu'une transformation complète avec mise en place de CI/CD, monitoring et formation équipes peut prendre 6 à 12 mois."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels sont les bénéfices d'Infrastructure as Code ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'IaC avec Terraform et Ansible permet de réduire les erreurs de déploiement de 80%, d'accélérer les mises en production et de garantir la reproductibilité des environnements de développement, test et production."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi choisir ThreeB pour votre projet cloud ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notre expertise couvre Azure et AWS avec des certifications officielles. Nous maîtrisons l'architecture cloud-native, l'optimisation des coûts et les bonnes pratiques sécuritaires pour des migrations réussies."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Font & styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav aria-label="Navigation principale">
+        <a href="#services" aria-label="Aller à nos services">Services</a>
+        <a href="#testimonials" aria-label="Voir les témoignages clients">Témoignages</a>
+        <a href="#about" aria-label="En savoir plus sur ThreeB">À propos</a>
+        <a href="#contact" aria-label="Nous contacter">Contact</a>
+      </nav>
+      <img src="static/threeb-logo.png" alt="Logo ThreeB - Conseil DevOps et SRE" width="140" height="100" loading="eager" />
+      <h1>Three<span>B</span></h1>
+      <p>DevOps &amp; SRE Expertise — Building Reliable IT Solutions</p>
+    </header>
+
+    <main>
+
+    <!-- Services -->
+    <section id="services">
+      <h2>Nos Services</h2>
+      <div class="services-grid">
+        <article class="card">
+          <h3><a href="infrastructure-as-code.html" style="color: inherit; text-decoration: none;">Infrastructure as Code (IaC)</a></h3>
+          <div class="logos-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Logo Terraform - Infrastructure as Code" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" alt="Logo Ansible - Configuration management" loading="lazy" />
+          </div>
+          <p>
+            Automatisation complète de votre infrastructure avec <strong>Terraform</strong> et <strong>Ansible</strong>. 
+            Nous créons des environnements reproductibles, versionnés et sécurisés pour accélérer vos déploiements 
+            tout en réduisant les erreurs humaines.
+          </p>
+        </article>
+        <article class="card">
+          <h3><a href="ci-cd-modernes.html" style="color: inherit; text-decoration: none;">CI/CD Modernes</a></h3>
+          <div class="logos-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="Logo GitLab - CI/CD Platform" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" alt="Logo Azure DevOps - Microsoft CI/CD" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Logo GitHub - Version Control" loading="lazy" />
+          </div>
+          <p>
+            Conception et implémentation de pipelines <strong>CI/CD robustes</strong> avec GitLab, Azure DevOps et GitHub Actions. 
+            Automatisation complète du cycle de développement : tests automatisés, déploiements sécurisés et rollbacks instantanés.
+          </p>
+        </article>
+        <article class="card">
+          <h3><a href="observabilite-monitoring.html" style="color: inherit; text-decoration: none;">Observabilité &amp; Monitoring</a></h3>
+          <div class="logos-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Logo Prometheus - Monitoring System" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Logo Grafana - Analytics Platform" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Logo Elasticsearch - Search Engine" loading="lazy" />
+          </div>
+          <p>
+            Solutions d'<strong>observabilité complète</strong> avec Prometheus, Grafana et la stack ELK. 
+            Dashboards temps réel, alerting intelligent et analyse de performance pour anticiper les incidents avant qu'ils n'impactent vos utilisateurs.
+          </p>
+        </article>
+        <article class="card">
+          <h3><a href="site-reliability-engineering.html" style="color: inherit; text-decoration: none;">Site Reliability Engineering (SRE)</a></h3>
+          <div class="logos-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Logo Kubernetes - Container Orchestration" loading="lazy" />
+            <img src="https://avatars.githubusercontent.com/u/609438?s=200&v=4" alt="Logo PagerDuty - Incident Management" style="border-radius: 6px;" loading="lazy" />
+          </div>
+          <p>
+            Implémentation des <strong>pratiques SRE Google</strong> : définition et optimisation des SLA/SLO, 
+            gestion d'incidents avec PagerDuty, orchestration Kubernetes et réduction de la dette technique opérationnelle.
+          </p>
+        </article>
+        <article class="card">
+          <h3><a href="architecture-cloud-native.html" style="color: inherit; text-decoration: none;">Architecture Cloud Native</a></h3>
+          <div class="logos-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Logo Microsoft Azure - Cloud Platform" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="Logo Amazon Web Services - Cloud Computing" loading="lazy" />
+          </div>
+          <p>
+            <strong>Architectures cloud natives</strong> sur Azure et AWS : migration lift-and-shift, refactoring microservices, 
+            optimisation des coûts cloud, sécurisation IAM et mise en place de stratégies multi-cloud résilientes.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <h2>Ce que disent nos clients</h2>
+      <div class="services-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            "ThreeB a transformé notre infrastructure en nous accompagnant dans la migration vers le cloud. Leur expertise DevOps nous a permis de gagner en agilité et en fiabilité."
+          </div>
+          <div class="testimonial-author">Cédric Becam</div>
+          <div class="testimonial-company">Responsable de l'infrastructure, DigitRE Group</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            "L'équipe ThreeB a mis en place nos pipelines CI/CD en un temps record. Leur approche pragmatique et leur expertise technique sont remarquables."
+          </div>
+          <div class="testimonial-author">Erik de Zeeuw</div>
+          <div class="testimonial-company">Responsable de l'infrastructure, DataObserver</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            "Grâce à ThreeB, nous avons considérablement amélioré notre observabilité système. Leurs solutions de monitoring nous ont permis de réduire les incidents de 80%."
+          </div>
+          <div class="testimonial-author">Richard Morand</div>
+          <div class="testimonial-company">Digital Solution Manager, Linxens</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2>À propos de ThreeB</h2>
+      <p>
+        ThreeB est une société de conseil spécialisée dans la transformation
+        DevOps et la fiabilité des systèmes. Nous accompagnons les équipes IT
+        dans la conception, l'industrialisation et l'exploitation
+        d'infrastructures robustes, scalables et sécurisées.
+      </p>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why">
+      <h2>Pourquoi nous choisir&nbsp;?</h2>
+      <ul>
+        <li><strong>Expertise reconnue&nbsp;:</strong> plus de 10 ans d’expérience dans le cloud et l’automatisation.</li>
+        <li><strong>Approche pragmatique&nbsp;:</strong> des solutions adaptées à votre contexte et à vos contraintes.</li>
+        <li><strong>Culture de l’amélioration continue&nbsp;:</strong> nous partageons nos savoir-faire pour rendre vos équipes autonomes.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2>Questions Fréquentes (FAQ)</h2>
+      <article>
+        <h3>Combien de temps prend une migration DevOps ?</h3>
+        <p>La durée varie selon la complexité de votre infrastructure actuelle. Une migration simple prend 2-3 mois, 
+           tandis qu'une transformation complète avec mise en place de CI/CD, monitoring et formation équipes 
+           peut prendre 6 à 12 mois.</p>
+      </article>
+      <article>
+        <h3>Quels sont les bénéfices d'Infrastructure as Code ?</h3>
+        <p>L'IaC avec Terraform et Ansible permet de réduire les erreurs de déploiement de 80%, 
+           d'accélérer les mises en production et de garantir la reproductibilité des environnements 
+           de développement, test et production.</p>
+      </article>
+      <article>
+        <h3>Pourquoi choisir ThreeB pour votre projet cloud ?</h3>
+        <p>Notre expertise couvre Azure et AWS avec des certifications officielles. Nous maîtrisons 
+           l'architecture cloud-native, l'optimisation des coûts et les bonnes pratiques sécuritaires 
+           pour des migrations réussies.</p>
+      </article>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>
+        Discutons de vos défis techniques et façonnons ensemble une
+        infrastructure fiable.
+      </p>
+      <a class="button" href="mailto:contact@threeb.fr">contact@threeb.fr</a>
+    </section>
+
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ThreeB SAS. Tous droits réservés.</p>
+      <nav aria-label="Navigation footer">
+        <a href="#services">Services</a>
+        <a href="#about">À propos</a>
+        <a href="mailto:contact@threeb.fr">Contact</a>
+      </nav>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TD4YYM76QZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TD4YYM76QZ');
+    </script>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pipeline CI/CD Échoué | ThreeB - Résolution Problèmes CI/CD GitLab Azure DevOps</title>
+    <meta name="description" content="Pipeline CI/CD échoué ? Expert résolution problèmes CI/CD : GitLab, Azure DevOps, GitHub Actions. Tests flaky, builds cassés, déploiements. Diagnostic rapide." />
+    <meta name="author" content="ThreeB SAS" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://threeb.fr/pipeline-ci-cd-echoue" />
+    
+    <!-- Geo-targeting meta tags -->
+    <meta name="geo.region" content="FR-13" />
+    <meta name="geo.placename" content="Aix-en-Provence" />
+    <meta name="geo.position" content="43.5297;5.4474" />
+    <meta name="ICBM" content="43.5297, 5.4474" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://threeb.fr/pipeline-ci-cd-echoue" />
+    <meta property="og:title" content="Pipeline CI/CD Échoué - Solutions Expert" />
+    <meta property="og:description" content="Résolution experte problèmes pipeline CI/CD. GitLab, Azure DevOps, GitHub Actions." />
+    <meta property="og:image" content="https://threeb.fr/static/threeb-logo.png" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Structured Data FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Pourquoi mon pipeline CI/CD échoue constamment ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les causes principales d'échec pipeline CI/CD : tests flaky instables, dépendances conflictuelles, environnements non-reproductibles, configuration incorrecte, ressources insuffisantes ou timeouts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment corriger des tests flaky dans le pipeline ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tests flaky : isolation des tests, mocking des dépendances externes, gestion des timeouts, cleanup between tests, utilisation de containers pour reproductibilité."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment optimiser la performance d'un pipeline CI/CD lent ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Optimisation pipeline : parallélisation des jobs, cache intelligent, images Docker optimisées, runners plus puissants, stages conditionnels selon changements."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Font & styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .problem-banner {
+        background: linear-gradient(45deg, #dc2626, #b91c1c);
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+      .error-card {
+        background: #fef2f2;
+        border-left: 4px solid #dc2626;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 1rem 0;
+      }
+      .solution-card {
+        background: #f0fdf4;
+        border-left: 4px solid #16a34a;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="problem-banner">
+      🔧 PIPELINE CI/CD ÉCHOUÉ ? DIAGNOSTIC EXPERT & RÉSOLUTION RAPIDE
+    </div>
+
+    <header>
+      <nav aria-label="Navigation principale">
+        <a href="/" aria-label="Retour à l'accueil">Accueil</a>
+        <a href="/#services" aria-label="Voir tous nos services">Services</a>
+        <a href="/#testimonials" aria-label="Voir les témoignages clients">Témoignages</a>
+        <a href="/#about" aria-label="En savoir plus sur ThreeB">À propos</a>
+        <a href="/#contact" aria-label="Nous contacter">Contact</a>
+      </nav>
+      <img src="static/threeb-logo.png" alt="Logo ThreeB - Conseil DevOps et SRE" width="140" height="100" loading="eager" />
+      <h1>Pipeline CI/CD Échoué</h1>
+      <p>Diagnostic Expert • Résolution Garantie</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Pipeline CI/CD Échoué ? Solutions Expertes</h2>
+        <p>
+          Votre pipeline CI/CD ne fonctionne plus ? Builds qui cassent, tests qui échouent, déploiements impossibles ? 
+          Nos experts DevOps diagnostiquent et résolvent rapidement vos problèmes CI/CD sur GitLab, Azure DevOps, 
+          GitHub Actions et Jenkins. <strong>Résolution garantie sous 24h</strong>.
+        </p>
+      </section>
+
+      <section>
+        <h2>🚨 Problèmes Pipeline CI/CD Fréquents</h2>
+        
+        <div class="error-card">
+          <h3>💥 Tests Flaky - Échecs Intermittents</h3>
+          <p><strong>Symptômes :</strong> Tests qui passent parfois, échecs aléatoires, instabilité du pipeline</p>
+          <p><strong>Impact :</strong> Perte de confiance équipe, blocage déploiements, debugging constant</p>
+        </div>
+        
+        <div class="solution-card">
+          <h3>✅ Solution Tests Flaky</h3>
+          <ul>
+            <li><strong>Isolation tests</strong> : Cleanup between tests, état initial propre</li>
+            <li><strong>Mocking dépendances</strong> : Services externes, bases de données, APIs</li>
+            <li><strong>Timeouts robustes</strong> : Gestion attentes asynchrones, retry policies</li>
+            <li><strong>Environnement reproductible</strong> : Containers, seed data consistante</li>
+            <li><strong>Monitoring test execution</strong> : Métriques stabilité, reporting flaky tests</li>
+          </ul>
+          <p><strong>Résultat :</strong> Taux de réussite tests >98%, confiance pipeline restaurée</p>
+        </div>
+
+        <div class="error-card">
+          <h3>🔥 Build Fails - Compilation Échoue</h3>
+          <p><strong>Symptômes :</strong> Erreurs compilation, dépendances manquantes, versions incompatibles</p>
+          <p><strong>Impact :</strong> Développement bloqué, impossible de merger, frustration équipe</p>
+        </div>
+        
+        <div class="solution-card">
+          <h3>✅ Solution Build Fails</h3>
+          <ul>
+            <li><strong>Dependency management</strong> : Lock files, versions pinned, cache dépendances</li>
+            <li><strong>Build environments</strong> : Images Docker standardisées, reproductibles</li>
+            <li><strong>Incremental builds</strong> : Build only what changed, cache intelligent</li>
+            <li><strong>Resource allocation</strong> : RAM/CPU suffisants, parallélisation optimisée</li>
+            <li><strong>Error reporting</strong> : Logs détaillés, notifications intelligentes</li>
+          </ul>
+          <p><strong>Résultat :</strong> Builds stables 99%+, temps build réduit 50%</p>
+        </div>
+
+        <div class="error-card">
+          <h3>⏰ Pipeline Timeouts - Trop Lent</h3>
+          <p><strong>Symptômes :</strong> Pipeline qui traîne, timeouts fréquents, feedback tardif</p>
+          <p><strong>Impact :</strong> Cycles développement ralentis, coûts runners élevés</p>
+        </div>
+        
+        <div class="solution-card">
+          <h3>✅ Solution Pipeline Performance</h3>
+          <ul>
+            <li><strong>Parallélisation jobs</strong> : Matrix builds, parallel test execution</li>
+            <li><strong>Cache stratégique</strong> : Dependencies, build artifacts, Docker layers</li>
+            <li><strong>Conditional execution</strong> : Skip stages if no changes, smart triggers</li>
+            <li><strong>Resource optimization</strong> : Right-sizing runners, auto-scaling</li>
+            <li><strong>Pipeline splitting</strong> : Fast feedback loop, slower comprehensive tests</li>
+          </ul>
+          <p><strong>Résultat :</strong> Pipeline 3x plus rapide, feedback <10min</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Diagnostic Pipeline CI/CD par Plateforme</h2>
+        
+        <div class="services-grid">
+          <article class="card">
+            <h3>🦊 GitLab CI/CD</h3>
+            <p>
+              <strong>Expertise GitLab pipelines</strong><br>
+              • YAML configuration optimization<br>
+              • GitLab Runners troubleshooting<br>
+              • Review Apps et environments<br>
+              • Security scanning integration<br>
+              • Performance monitoring built-in
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>☁️ Azure DevOps Pipelines</h3>
+            <p>
+              <strong>Azure Pipelines expert</strong><br>
+              • YAML multi-stage pipelines<br>
+              • Azure Artifacts integration<br>
+              • Release Gates configuration<br>
+              • Service connections debugging<br>
+              • Integration Azure services
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>🐙 GitHub Actions</h3>
+            <p>
+              <strong>GitHub Workflows specialist</strong><br>
+              • Workflow YAML optimization<br>
+              • Actions marketplace usage<br>
+              • Secrets et environments<br>
+              • Matrix strategy configuration<br>
+              • Self-hosted runners setup
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>⚙️ Jenkins Pipelines</h3>
+            <p>
+              <strong>Jenkins Groovy pipelines</strong><br>
+              • Jenkinsfile optimization<br>
+              • Plugin conflicts resolution<br>
+              • Master/Agent configuration<br>
+              • Blue Ocean interface<br>
+              • Legacy to modern migration
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>🔧 Méthodologie Résolution Pipeline</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>1️⃣ Diagnostic Rapide (1-2h)</h3>
+            <p>
+              <strong>Analyse logs et configuration</strong><br>
+              • Pipeline history analysis<br>
+              • Error patterns identification<br>
+              • Resource utilization check<br>
+              • Dependencies audit<br>
+              • Quick wins identification
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3>2️⃣ Root Cause Analysis (2-4h)</h3>
+            <p>
+              <strong>Investigation approfondie</strong><br>
+              • Code changes correlation<br>
+              • Environment differences<br>
+              • Timing issues detection<br>
+              • Resource bottlenecks<br>
+              • Integration points analysis
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3>3️⃣ Fix Implementation (2-8h)</h3>
+            <p>
+              <strong>Correction et optimisation</strong><br>
+              • Configuration fixes<br>
+              • Code corrections<br>
+              • Performance improvements<br>
+              • Testing et validation<br>
+              • Documentation updates
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3>4️⃣ Prevention Setup (1-2 jours)</h3>
+            <p>
+              <strong>Éviter la récurrence</strong><br>
+              • Monitoring pipeline health<br>
+              • Alerting configuration<br>
+              • Best practices implementation<br>
+              • Team training<br>
+              • Runbooks creation
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Pipeline CI/CD Best Practices</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>🚀 Fast Feedback</h3>
+            <ul>
+              <li><strong>Pipeline rapide :</strong> <10min pour feedback initial</li>
+              <li><strong>Fail fast :</strong> Tests rapides en premier</li>
+              <li><strong>Parallel execution :</strong> Jobs indépendants</li>
+              <li><strong>Incremental testing :</strong> Test only what changed</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🔄 Reliability</h3>
+            <ul>
+              <li><strong>Idempotent operations :</strong> Répétable sans effet de bord</li>
+              <li><strong>Environment parity :</strong> Dev/staging/prod identiques</li>
+              <li><strong>Atomic deployments :</strong> All or nothing</li>
+              <li><strong>Rollback capability :</strong> Retour arrière rapide</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>📊 Observability</h3>
+            <ul>
+              <li><strong>Pipeline metrics :</strong> Success rate, duration, MTTR</li>
+              <li><strong>Detailed logging :</strong> Debug information accessible</li>
+              <li><strong>Alerting :</strong> Notification échecs et dégradations</li>
+              <li><strong>Dashboards :</strong> Vue d'ensemble santé pipeline</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🔒 Security</h3>
+            <ul>
+              <li><strong>Secrets management :</strong> Variables sécurisées</li>
+              <li><strong>Least privilege :</strong> Permissions minimales</li>
+              <li><strong>Security scanning :</strong> SAST/DAST intégré</li>
+              <li><strong>Audit trails :</strong> Traçabilité complète</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Cas d'Usage Résolutions Réussies</h2>
+        
+        <div class="services-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              "Pipeline GitLab complètement cassé depuis 3 semaines, équipe dev bloquée. ThreeB a identifié et résolu le problème en 4 heures. Tests maintenant stables à 99.5%."
+            </div>
+            <div class="testimonial-author">Lead DevOps</div>
+            <div class="testimonial-company">Fintech - Aix-en-Provence</div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              "Azure DevOps pipelines qui traînaient 45min. Après optimisation ThreeB : 8 minutes ! Productivité équipe transformée, déploiements 5x plus fréquents."
+            </div>
+            <div class="testimonial-author">Architecte Solutions</div>
+            <div class="testimonial-company">Scale-up SaaS - Marseille</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Outils Diagnostic Pipeline</h2>
+        
+        <div class="logos-container">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" alt="Azure DevOps" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" alt="Jenkins" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" loading="lazy" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" loading="lazy" />
+        </div>
+        <p>
+          <strong>CI/CD Platforms :</strong> GitLab CI, Azure DevOps, GitHub Actions, Jenkins, CircleCI<br>
+          <strong>Testing Tools :</strong> Jest, Pytest, JUnit, Selenium, Cypress, SonarQube<br>
+          <strong>Container Tools :</strong> Docker, Podman, Kaniko, BuildKit<br>
+          <strong>Monitoring :</strong> Prometheus, Grafana, DataDog, Application Insights<br>
+          <strong>Security :</strong> Snyk, OWASP ZAP, Checkmarx, Veracode
+        </p>
+      </section>
+
+      <section>
+        <h2>Tarification Résolution Pipeline</h2>
+        
+        <div class="services-grid">
+          <div class="card">
+            <h3>🔍 Diagnostic Pipeline</h3>
+            <p>
+              <strong>300€ HT (2-4h)</strong><br>
+              • Analyse logs et configuration<br>
+              • Identification causes racines<br>
+              • Plan d'action détaillé<br>
+              • Estimation temps résolution<br>
+              • Quick fixes immédiats si possible
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3>🔧 Résolution Complète</h3>
+            <p>
+              <strong>800€ HT/jour</strong><br>
+              • Fix complet du pipeline<br>
+              • Optimisation performance<br>
+              • Tests et validation<br>
+              • Documentation solution<br>
+              • Formation équipe incluse
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3>🎯 Forfait Pipeline Fix</h3>
+            <p>
+              <strong>1 500€ HT tout inclus</strong><br>
+              • Diagnostic + résolution garantie<br>
+              • Optimisation performance incluse<br>
+              • Monitoring setup<br>
+              • Support 30 jours post-fix<br>
+              • Pas de surprise budget
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>🚨 Pipeline CI/CD Cassé ?</h2>
+        <p>
+          Votre équipe est bloquée ? <strong>Diagnostic immédiat gratuit de 15 minutes</strong> 
+          pour identifier rapidement la cause et vous proposer la solution adaptée.
+        </p>
+        <a class="button" href="mailto:contact@threeb.fr?subject=Pipeline%20CI/CD%20Cassé%20-%20Diagnostic%20Urgent%2015min">
+          🔧 Diagnostic Gratuit 15min
+        </a>
+        <p><small>
+          <strong>Résolution garantie sous 24h</strong> • Intervention remote immédiate<br>
+          GitLab • Azure DevOps • GitHub Actions • Jenkins • Support 24/7
+        </small></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ThreeB SAS. Tous droits réservés.</p>
+      <nav aria-label="Navigation footer">
+        <a href="/">Accueil</a>
+        <a href="/#services">Services</a>
+        <a href="/#about">À propos</a>
+        <a href="mailto:contact@threeb.fr">Contact</a>
+      </nav>
+    </footer>
+  </body>
+</html>
