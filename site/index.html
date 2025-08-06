@@ -233,9 +233,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- Critical CSS inline -->
+    <style>
+      /* Critical Above-the-fold CSS */
+      :root{--primary:#00429b;--accent:#16a34a;--bg:#f7f9fc;--text:#1e293b}*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}header{display:flex;flex-direction:column;align-items:center;padding:2rem 1rem;text-align:center}nav{margin-bottom:2rem}nav a{margin:0 1rem;text-decoration:none;color:var(--primary);font-weight:500}header img{max-width:140px;height:auto;margin-bottom:1rem}header h1{font-size:2.5rem;font-weight:700}header h1 span{color:var(--accent)}header p{font-size:1.125rem;margin-top:0.5rem}
+    </style>
+    
+    <!-- Non-critical CSS loaded async -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="style.css" /></noscript>
+    
+    <!-- Fonts loaded async with font-display swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" /></noscript>
   </head>
 
   <body>
@@ -280,8 +290,8 @@
         <article class="card">
           <h3><a href="infrastructure-as-code.html" class="service-link">Infrastructure as Code (IaC)</a></h3>
           <div class="logos-container">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform Infrastructure as Code expert Aix-en-Provence - ThreeB DevOps" loading="lazy" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" alt="Ansible automation expert Marseille PACA - Configuration management ThreeB" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform Infrastructure as Code expert Aix-en-Provence - ThreeB DevOps" width="30" height="30" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" alt="Ansible automation expert Marseille PACA - Configuration management ThreeB" width="30" height="30" loading="lazy" />
           </div>
           <p>
             Automatisation complète de votre infrastructure avec <strong>Terraform</strong> et <strong>Ansible</strong>. 
@@ -292,9 +302,9 @@
         <article class="card">
           <h3><a href="ci-cd-modernes.html" class="service-link">CI/CD Modernes</a></h3>
           <div class="logos-container">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab CI/CD expert Aix-en-Provence - Pipeline DevOps ThreeB" loading="lazy" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" alt="Azure DevOps specialist PACA - Microsoft CI/CD consultant ThreeB" loading="lazy" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub Actions expert Marseille - DevOps automation ThreeB" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab CI/CD expert Aix-en-Provence - Pipeline DevOps ThreeB" width="30" height="30" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" alt="Azure DevOps specialist PACA - Microsoft CI/CD consultant ThreeB" width="30" height="30" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub Actions expert Marseille - DevOps automation ThreeB" width="30" height="30" loading="lazy" />
           </div>
           <p>
             Conception et implémentation de pipelines <strong>CI/CD robustes</strong> avec GitLab, Azure DevOps et GitHub Actions. 
@@ -304,9 +314,9 @@
         <article class="card">
           <h3><a href="observabilite-monitoring.html" class="service-link">Observabilité &amp; Monitoring</a></h3>
           <div class="logos-container">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Prometheus monitoring expert Aix-en-Provence - Observabilité ThreeB SRE" loading="lazy" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana dashboard specialist PACA - Analytics plateforme ThreeB" loading="lazy" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch ELK stack expert Marseille - Log monitoring ThreeB" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Prometheus monitoring expert Aix-en-Provence - Observabilité ThreeB SRE" width="30" height="30" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana dashboard specialist PACA - Analytics plateforme ThreeB" width="30" height="30" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch ELK stack expert Marseille - Log monitoring ThreeB" width="30" height="30" loading="lazy" />
           </div>
           <p>
             Solutions d'<strong>observabilité complète</strong> avec Prometheus, Grafana et la stack ELK. 
@@ -316,8 +326,8 @@
         <article class="card">
           <h3><a href="site-reliability-engineering.html" class="service-link">Site Reliability Engineering (SRE)</a></h3>
           <div class="logos-container">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes expert Aix-en-Provence - Container orchestration SRE ThreeB" loading="lazy" />
-            <img src="https://avatars.githubusercontent.com/u/609438?s=200&v=4" alt="PagerDuty incident management PACA - On-call expert ThreeB SRE" style="border-radius: 6px;" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes expert Aix-en-Provence - Container orchestration SRE ThreeB" width="30" height="30" loading="lazy" />
+            <img src="https://avatars.githubusercontent.com/u/609438?s=200&v=4" alt="PagerDuty incident management PACA - On-call expert ThreeB SRE" width="30" height="30" style="border-radius: 6px;" loading="lazy" />
           </div>
           <p>
             Implémentation des <strong>pratiques SRE Google</strong> : définition et optimisation des SLA/SLO, 
@@ -327,8 +337,8 @@
         <article class="card">
           <h3><a href="architecture-cloud-native.html" class="service-link">Architecture Cloud Native</a></h3>
           <div class="logos-container">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft Azure expert Aix-en-Provence - Cloud architecture ThreeB" loading="lazy" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS cloud expert Marseille PACA - Architecture cloud native ThreeB" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft Azure expert Aix-en-Provence - Cloud architecture ThreeB" width="30" height="30" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS cloud expert Marseille PACA - Architecture cloud native ThreeB" width="30" height="30" loading="lazy" />
           </div>
           <p>
             <strong>Architectures cloud natives</strong> sur Azure et AWS : migration lift-and-shift, refactoring microservices, 

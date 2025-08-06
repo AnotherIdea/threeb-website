@@ -23,6 +23,12 @@ server {
         expires 1y;
         add_header Cache-Control "public, immutable";
     }
+    
+    # Cache pour HTML (court pour permettre mises à jour)
+    location ~* \.(html)$ {
+        expires 1h;
+        add_header Cache-Control "public, must-revalidate";
+    }
 
     # Headers de sécurité
     add_header X-Frame-Options "SAMEORIGIN" always;
