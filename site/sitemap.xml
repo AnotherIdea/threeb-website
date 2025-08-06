@@ -1,163 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://threeb.fr/</loc>
+    <loc>https://www.threeb.fr/</loc>
     <lastmod>2025-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/infrastructure-as-code.html</loc>
+    <loc>https://www.threeb.fr/infrastructure-as-code.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/ci-cd-modernes.html</loc>
+    <loc>https://www.threeb.fr/ci-cd-modernes.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/observabilite-monitoring.html</loc>
+    <loc>https://www.threeb.fr/observabilite-monitoring.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/site-reliability-engineering.html</loc>
+    <loc>https://www.threeb.fr/site-reliability-engineering.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/architecture-cloud-native.html</loc>
+    <loc>https://www.threeb.fr/architecture-cloud-native.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/urgence-sre.html</loc>
+    <loc>https://www.threeb.fr/urgence-sre.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/consultant-devops-aix-en-provence.html</loc>
+    <loc>https://www.threeb.fr/consultant-devops-aix-en-provence.html</loc>
     <lastmod>2025-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/agence-sre-francaise.html</loc>
+    <loc>https://www.threeb.fr/agence-sre-francaise.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/solutions-problemes-devops.html</loc>
+    <loc>https://www.threeb.fr/solutions-problemes-devops.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/expert-kubernetes-paca.html</loc>
+    <loc>https://www.threeb.fr/expert-kubernetes-paca.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/sre-aix-marseille-provence.html</loc>
+    <loc>https://www.threeb.fr/sre-aix-marseille-provence.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/monitoring-as-a-service.html</loc>
+    <loc>https://www.threeb.fr/monitoring-as-a-service.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/audit-disponibilite-sla.html</loc>
+    <loc>https://www.threeb.fr/audit-disponibilite-sla.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/conseil-devops-sur-mesure.html</loc>
+    <loc>https://www.threeb.fr/conseil-devops-sur-mesure.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/pipeline-ci-cd-echoue.html</loc>
+    <loc>https://www.threeb.fr/pipeline-ci-cd-echoue.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/erreur-500-recurrente.html</loc>
+    <loc>https://www.threeb.fr/erreur-500-recurrente.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/formation-devops-aix.html</loc>
+    <loc>https://www.threeb.fr/formation-devops-aix.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/agence-cloud-provence.html</loc>
+    <loc>https://www.threeb.fr/agence-cloud-provence.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/incident-production-critique.html</loc>
+    <loc>https://www.threeb.fr/incident-production-critique.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/guide-observabilite-open-source.html</loc>
+    <loc>https://www.threeb.fr/guide-observabilite-open-source.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/formation-kubernetes-avancee.html</loc>
+    <loc>https://www.threeb.fr/formation-kubernetes-avancee.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/bonnes-pratiques-sre.html</loc>
+    <loc>https://www.threeb.fr/bonnes-pratiques-sre.html</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/services-devops-complets.html</loc>
+    <loc>https://www.threeb.fr/services-devops-complets.html</loc>
     <lastmod>2025-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/support-urgence-devops.html</loc>
+    <loc>https://www.threeb.fr/support-urgence-devops.html</loc>
     <lastmod>2025-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/devops-aix-provence-paca.html</loc>
+    <loc>https://www.threeb.fr/devops-aix-provence-paca.html</loc>
     <lastmod>2025-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://threeb.fr/formation-ressources-devops.html</loc>
+    <loc>https://www.threeb.fr/formation-ressources-devops.html</loc>
     <lastmod>2025-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
