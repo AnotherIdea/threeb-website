@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formation DevOps & Ressources | ThreeB - Expert Pédagogique PACA</title>
+    <meta name="description" content="Formations DevOps sur-mesure à Aix-en-Provence : Kubernetes, Terraform, CI/CD, SRE. Ressources pédagogiques et montée en compétences équipes IT." />
+    <meta name="author" content="ThreeB SAS" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#00429b" />
+    <meta name="date" content="2025-08-06" />
+    <meta name="last-modified" content="2025-08-06T15:30:00+01:00" />
+    
+    <!-- Geo-targeting meta tags -->
+    <meta name="geo.region" content="FR-13" />
+    <meta name="geo.placename" content="Aix-en-Provence" />
+    <meta name="geo.position" content="43.5297;5.4474" />
+    <meta name="ICBM" content="43.5297, 5.4474" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="static/threeb-logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="static/threeb-logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="static/threeb-logo.png" />
+    <link rel="manifest" href="manifest.json" />
+    
+    <link rel="canonical" href="https://threeb.fr/formation-ressources-devops" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://threeb.fr/formation-ressources-devops" />
+    <meta property="og:title" content="Formation DevOps & Ressources - ThreeB" />
+    <meta property="og:description" content="Formations DevOps sur-mesure et ressources pédagogiques pour équipes IT." />
+    <meta property="og:image" content="https://threeb.fr/static/threeb-logo.png" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="article:author" content="ThreeB SAS" />
+    <meta property="article:section" content="DevOps Training" />
+    <meta property="article:tag" content="Formation DevOps, Kubernetes, Training, PACA" />
+    <meta property="article:published_time" content="2025-08-06T15:30:00+01:00" />
+    <meta property="article:modified_time" content="2025-08-06T15:30:00+01:00" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://threeb.fr/formation-ressources-devops" />
+    <meta property="twitter:title" content="Formation DevOps & Ressources - ThreeB" />
+    <meta property="twitter:description" content="Formations DevOps sur-mesure pour équipes IT" />
+    <meta property="twitter:image" content="https://threeb.fr/static/threeb-logo.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Formation DevOps - ThreeB",
+      "description": "Organisme de formation spécialisé en DevOps, SRE, Kubernetes et Cloud. Formations sur-mesure pour entreprises et équipes IT",
+      "url": "https://threeb.fr/formation-ressources-devops",
+      "logo": "https://threeb.fr/static/threeb-logo.png",
+      "foundingDate": "2024",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "contact@threeb.fr",
+        "availableLanguage": "French"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Aix-en-Provence",
+        "addressRegion": "Provence-Alpes-Côte d'Azur",
+        "postalCode": "13100",
+        "addressCountry": "FR"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Aix-en-Provence"},
+        {"@type": "City", "name": "Marseille"},
+        {"@type": "AdministrativeArea", "name": "Provence-Alpes-Côte d'Azur"},
+        {"@type": "Country", "name": "France"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Formations DevOps",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "Formation Kubernetes",
+              "description": "Formation complète à l'orchestration de containers avec Kubernetes"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "Formation DevOps",
+              "description": "Transformation DevOps et bonnes pratiques pour équipes IT"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "Formation SRE",
+              "description": "Site Reliability Engineering et pratiques Google SRE"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://threeb.fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Formation & Ressources DevOps",
+          "item": "https://threeb.fr/formation-ressources-devops"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <nav aria-label="Navigation principale">
+        <a href="/" aria-label="Retour à l'accueil">Accueil</a>
+        <a href="/#services" aria-label="Voir nos services">Services</a>
+        <a href="/#about" aria-label="En savoir plus sur ThreeB">À propos</a>
+        <a href="/#contact" aria-label="Nous contacter">Contact</a>
+      </nav>
+      <img src="static/threeb-logo.png" alt="Logo ThreeB - Formation DevOps et Ressources" width="140" height="100" loading="eager" />
+      <h1>🎓 Formation DevOps & Ressources - Montée en Compétences IT</h1>
+      <p>Formations sur-mesure et ressources pédagogiques pour autonomiser vos équipes</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>🎯 L'Importance de la Formation en DevOps</h2>
+        <p>
+          La <strong>transformation DevOps</strong> ne se limite pas aux outils et processus : 
+          elle repose avant tout sur les <strong>compétences et la culture</strong> de vos équipes. 
+          Nos formations sur-mesure vous accompagnent dans cette évolution humaine et technique.
+        </p>
+        <p>
+          <strong>Objectif :</strong> Autonomiser vos équipes IT pour qu'elles maîtrisent les 
+          technologies DevOps, adoptent les bonnes pratiques et développent une culture 
+          de collaboration et d'amélioration continue.
+        </p>
+      </section>
+
+      <!-- Catalogue formations -->
+      <section>
+        <h2>📚 Catalogue de Formations</h2>
+        <div class="services-grid">
+          <article class="card">
+            <h3><a href="formation-devops-aix.html" class="service-link">🚀 Formation DevOps Fondamentaux</a></h3>
+            <div class="logos-container">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker containerization formation Aix-en-Provence ThreeB" loading="lazy" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git version control formation expert ThreeB DevOps" loading="lazy" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" alt="Jenkins CI/CD formation pipeline automation ThreeB" loading="lazy" />
+            </div>
+            <p>
+              <strong>Formation intensive 3 jours</strong> aux fondamentaux DevOps. 
+              Culture, outils essentiels, et mise en pratique sur projets réels.
+            </p>
+            <ul>
+              <li>Culture et mindset DevOps</li>
+              <li>Git workflows et collaboration</li>
+              <li>Docker et containerisation</li>
+              <li>Bases CI/CD avec Jenkins</li>
+            </ul>
+            <p><strong>📅 Durée :</strong> 3 jours • <strong>👥 Groupe :</strong> 8 pers max • <strong>💰 Prix :</strong> 2400€/pers</p>
+          </article>
+          
+          <article class="card">
+            <h3><a href="formation-kubernetes-avancee.html" class="service-link">☸️ Formation Kubernetes Avancée</a></h3>
+            <div class="logos-container">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes expert formation orchestration Aix-en-Provence ThreeB" loading="lazy" />
+              <img src="https://helm.sh/img/helm.svg" alt="Helm Kubernetes package manager formation ThreeB expert" loading="lazy" style="width: 30px; height: 30px;" />
+            </div>
+            <p>
+              <strong>Formation technique 4 jours</strong> pour maîtriser Kubernetes en production. 
+              Architecture, sécurité, monitoring et troubleshooting avancés.
+            </p>
+            <ul>
+              <li>Architecture clusters production</li>
+              <li>Networking et ingress avancés</li>
+              <li>Security & RBAC</li>
+              <li>Monitoring et troubleshooting</li>
+            </ul>
+            <p><strong>📅 Durée :</strong> 4 jours • <strong>👥 Groupe :</strong> 6 pers max • <strong>💰 Prix :</strong> 3200€/pers</p>
+          </article>
+          
+          <article class="card">
+            <h3>🏗️ Formation Infrastructure as Code</h3>
+            <div class="logos-container">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform Infrastructure as Code formation expert Aix-en-Provence ThreeB" loading="lazy" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" alt="Ansible configuration management formation automation ThreeB" loading="lazy" />
+            </div>
+            <p>
+              <strong>Formation pratique 3 jours</strong> à l'automatisation d'infrastructure. 
+              Terraform, Ansible et bonnes pratiques IaC en environnement multi-cloud.
+            </p>
+            <ul>
+              <li>Terraform : de zéro à la production</li>
+              <li>Ansible pour la configuration</li>
+              <li>GitOps et versioning IaC</li>
+              <li>Multi-cloud et bonnes pratiques</li>
+            </ul>
+            <p><strong>📅 Durée :</strong> 3 jours • <strong>👥 Groupe :</strong> 8 pers max • <strong>💰 Prix :</strong> 2700€/pers</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Formations spécialisées -->
+      <section>
+        <h2>🎯 Formations Spécialisées</h2>
+        <div class="services-grid">
+          <article class="card">
+            <h3>📊 Formation SRE & Observabilité</h3>
+            <div class="logos-container">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Prometheus monitoring formation observabilité ThreeB SRE" loading="lazy" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana dashboard formation visualization ThreeB expert" loading="lazy" />
+            </div>
+            <p>
+              <strong>Formation avancée 3 jours</strong> aux pratiques SRE Google. 
+              SLA/SLO, incident management, observabilité et culture de la fiabilité.
+            </p>
+            <ul>
+              <li>Philosophie et pratiques SRE</li>
+              <li>Définition SLA/SLO/SLI</li>
+              <li>Stack observabilité complète</li>
+              <li>Incident response et post-mortems</li>
+            </ul>
+            <p><strong>📅 Durée :</strong> 3 jours • <strong>👥 Groupe :</strong> 6 pers max • <strong>💰 Prix :</strong> 2900€/pers</p>
+          </article>
+          
+          <article class="card">
+            <h3>🔄 Formation CI/CD Mastery</h3>
+            <div class="logos-container">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab CI/CD formation pipeline expert Aix-en-Provence ThreeB" loading="lazy" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" alt="Azure DevOps formation Microsoft CI/CD specialist ThreeB" loading="lazy" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub Actions formation automation workflow ThreeB expert" loading="lazy" />
+            </div>
+            <p>
+              <strong>Formation technique 3 jours</strong> aux pipelines CI/CD modernes. 
+              GitLab, Azure DevOps, GitHub Actions avec sécurité et bonnes pratiques.
+            </p>
+            <ul>
+              <li>Design patterns CI/CD</li>
+              <li>Pipeline as Code avancé</li>
+              <li>Security scanning intégré</li>
+              <li>Déploiements multi-environnements</li>
+            </ul>
+            <p><strong>📅 Durée :</strong> 3 jours • <strong>👥 Groupe :</strong> 8 pers max • <strong>💰 Prix :</strong> 2600€/pers</p>
+          </article>
+          
+          <article class="card">
+            <h3>☁️ Formation Cloud Native</h3>
+            <div class="logos-container">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft Azure cloud formation architecture ThreeB expert" loading="lazy" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS cloud formation services architecture ThreeB specialist" loading="lazy" />
+            </div>
+            <p>
+              <strong>Formation architecture 4 jours</strong> au cloud native. 
+              Microservices, serverless, patterns cloud et optimisation des coûts.
+            </p>
+            <ul>
+              <li>Architecture microservices</li>
+              <li>Serverless et FaaS</li>
+              <li>Multi-cloud strategies</li>
+              <li>Cost optimization et FinOps</li>
+            </ul>
+            <p><strong>📅 Durée :</strong> 4 jours • <strong>👥 Groupe :</strong> 6 pers max • <strong>💰 Prix :</strong> 3400€/pers</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Formats de formation -->
+      <section>
+        <h2>🎓 Formats & Modalités</h2>
+        <div class="services-grid">
+          <div class="card">
+            <h3>🏢 Intra-Entreprise</h3>
+            <p>
+              <strong>Formation dans vos locaux</strong><br>
+              • Contenu 100% personnalisé<br>
+              • Calendrier flexible<br>
+              • Cas d'usage sur vos projets réels<br>
+              • Jusqu'à 12 participants<br>
+              • Support post-formation inclus
+            </p>
+            <p><strong>💡 Avantage :</strong> Tarif dégressif par groupe, confidentialité totale</p>
+          </div>
+          
+          <div class="card">
+            <h3>👥 Inter-Entreprises</h3>
+            <p>
+              <strong>Sessions publiques à Aix-en-Provence</strong><br>
+              • Planning régulier mensuel<br>
+              • Networking entre participants<br>
+              • Salles équipées dernières technologies<br>
+              • Groupes limités (6-8 pers)<br>
+              • Tarif individuel optimisé
+            </p>
+            <p><strong>💡 Avantage :</strong> Échange d'expériences, coût réduit</p>
+          </div>
+          
+          <div class="card">
+            <h3>💻 Formation Hybride</h3>
+            <p>
+              <strong>Mix présentiel + distanciel</strong><br>
+              • Théorie en visio, pratique sur site<br>
+              • Labs hands-on en présentiel<br>
+              • Support en ligne continu<br>
+              • Flexible selon contraintes<br>
+              • Enregistrements sessions théoriques
+            </p>
+            <p><strong>💡 Avantage :</strong> Flexibilité maximale, efficacité optimisée</p>
+          </div>
+          
+          <div class="card">
+            <h3>🎯 Coaching Personnalisé</h3>
+            <p>
+              <strong>Accompagnement sur-mesure</strong><br>
+              • Sessions 1-to-1 ou équipe réduite<br>
+              • Focus sur défis spécifiques<br>
+              • Mentoring projets en cours<br>
+              • Disponibilité étendue<br>
+              • ROI immédiat garanti
+            </p>
+            <p><strong>💡 Avantage :</strong> Personnalisation maximale, impact direct</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ressources pédagogiques -->
+      <section>
+        <h2>📖 Ressources Pédagogiques</h2>
+        <div class="services-grid">
+          <article class="card">
+            <h3><a href="guide-observabilite-open-source.html" class="service-link">📊 Guide Observabilité Open Source</a></h3>
+            <p>
+              <strong>Guide complet gratuit</strong> pour implémenter une stack d'observabilité 
+              avec Prometheus, Grafana et ELK. Best practices et exemples concrets.
+            </p>
+            <ul>
+              <li>Architecture observabilité</li>
+              <li>Configuration step-by-step</li>
+              <li>Dashboards et alerting</li>
+              <li>Troubleshooting guide</li>
+            </ul>
+          </article>
+          
+          <article class="card">
+            <h3><a href="bonnes-pratiques-sre.html" class="service-link">🎯 Bonnes Pratiques SRE</a></h3>
+            <p>
+              <strong>Méthodologie SRE complète</strong> inspirée des pratiques Google. 
+              Templates, checklists et outils pour implémenter SRE dans votre organisation.
+            </p>
+            <ul>
+              <li>SLA/SLO/SLI templates</li>
+              <li>Incident runbooks</li>
+              <li>Post-mortem templates</li>
+              <li>Métriques et KPIs SRE</li>
+            </ul>
+          </article>
+          
+          <article class="card">
+            <h3>🛠️ Labs & Exercices Pratiques</h3>
+            <p>
+              <strong>Environnements hands-on</strong> pour pratiquer en conditions réelles. 
+              Clusters Kubernetes, pipelines CI/CD et stack de monitoring pré-configurés.
+            </p>
+            <ul>
+              <li>Kubernetes playground</li>
+              <li>GitLab CI/CD sandbox</li>
+              <li>Terraform cloud labs</li>
+              <li>Monitoring stack complète</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section>
+        <h2>🏆 Certifications & Validations</h2>
+        <p>
+          Nos formations préparent aux <strong>certifications officielles</strong> et incluent 
+          la validation de vos compétences acquises :
+        </p>
+        <div class="services-grid">
+          <div class="card">
+            <h3>☸️ Certifications Kubernetes</h3>
+            <ul>
+              <li><strong>CKA</strong> - Certified Kubernetes Administrator</li>
+              <li><strong>CKAD</strong> - Certified Kubernetes Application Developer</li>
+              <li><strong>CKS</strong> - Certified Kubernetes Security Specialist</li>
+              <li>Préparation examens + support</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>☁️ Certifications Cloud</h3>
+            <ul>
+              <li><strong>Azure</strong> - AZ-104, AZ-305, AZ-400</li>
+              <li><strong>AWS</strong> - Solutions Architect, DevOps Engineer</li>
+              <li><strong>Terraform</strong> - HashiCorp Certified Associate</li>
+              <li>Vouchers examens inclus</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🎯 Validation Interne</h3>
+            <ul>
+              <li>Évaluations pratiques continues</li>
+              <li>Projets fil rouge avec validation</li>
+              <li>Peer review et feedback</li>
+              <li>Certificat de réussite ThreeB</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>📈 Suivi Post-Formation</h3>
+            <ul>
+              <li>Support 6 mois post-formation</li>
+              <li>Sessions Q&A mensuelles</li>
+              <li>Mise à jour contenu gratuite</li>
+              <li>Communauté alumni exclusive</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Méthodologie pédagogique -->
+      <section>
+        <h2>🎓 Notre Méthodologie Pédagogique</h2>
+        <div class="services-grid">
+          <div class="card">
+            <h3>1️⃣ Assessment Initial</h3>
+            <p>
+              <strong>Évaluation des compétences</strong><br>
+              • Quiz technique de positionnement<br>
+              • Entretien besoins et objectifs<br>
+              • Adaptation contenu au niveau groupe<br>
+              • Définition learning path personnalisé
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3>2️⃣ Apprentissage Actif</h3>
+            <p>
+              <strong>70% pratique, 30% théorie</strong><br>
+              • Concepts expliqués par l'exemple<br>
+              • Labs hands-on immédiat<br>
+              • Projets fil rouge réalistes<br>
+              • Learning by doing exclusivement
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3>3️⃣ Validation Continue</h3>
+            <p>
+              <strong>Feedback et ajustements</strong><br>
+              • Checkpoints réguliers<br>
+              • Évaluations pratiques<br>
+              • Ajustement rythme et contenu<br>
+              • Support individualisé si besoin
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3>4️⃣ Transfert en Production</h3>
+            <p>
+              <strong>Application immédiate</strong><br>
+              • Cas d'usage sur vos projets<br>
+              • Plan d'action post-formation<br>
+              • Accompagnement mise en œuvre<br>
+              • Mesure ROI et impact business
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formateurs experts -->
+      <section>
+        <h2>👨‍🏫 Nos Formateurs Experts</h2>
+        <p>
+          Tous nos formateurs sont des <strong>experts techniques reconnus</strong> avec une 
+          expérience terrain significative et une passion pour la transmission de connaissances.
+        </p>
+        <div class="services-grid">
+          <div class="card">
+            <h3>🎯 Expertise Technique</h3>
+            <ul>
+              <li><strong>10+ ans</strong> d'expérience DevOps/SRE</li>
+              <li><strong>Certifications multiples</strong> (cloud, K8s, etc.)</li>
+              <li><strong>Projets industriels</strong> en production</li>
+              <li><strong>Veille technologique</strong> permanente</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🎓 Compétences Pédagogiques</h3>
+            <ul>
+              <li><strong>Formation certifiée</strong> aux techniques pédagogiques</li>
+              <li><strong>Expérience formation</strong> entreprise et école</li>
+              <li><strong>Adaptation</strong> tous niveaux et profils</li>
+              <li><strong>Passion transmission</strong> et mentoring</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🤝 Approche Humaine</h3>
+            <ul>
+              <li><strong>Empathie</strong> et compréhension besoins</li>
+              <li><strong>Patience</strong> et accompagnement individuel</li>
+              <li><strong>Bienveillance</strong> et encouragement</li>
+              <li><strong>Disponibilité</strong> pendant et après formation</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3>🏆 Reconnaissance</h3>
+            <ul>
+              <li><strong>Speaker</strong> conférences tech (Devoxx, etc.)</li>
+              <li><strong>Contributeur</strong> open source</li>
+              <li><strong>Auteur</strong> articles et guides techniques</li>
+              <li><strong>Satisfactionmoy.</strong> 4.9/5 participants</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services connexes -->
+      <section>
+        <h2>Services Connexes</h2>
+        <div class="services-grid">
+          <article class="card">
+            <h3><a href="services-devops-complets.html" class="service-link">🏗️ Services DevOps Complets</a></h3>
+            <p>
+              <strong>Transformation DevOps complète</strong> avec formation intégrée des équipes. 
+              Accompagnement technique et humain pour une transformation réussie.
+            </p>
+          </article>
+          
+          <article class="card">
+            <h3><a href="devops-aix-provence-paca.html" class="service-link">📍 Formations Locales PACA</a></h3>
+            <p>
+              <strong>Formations sur site en PACA</strong> avec intervention dans vos locaux. 
+              Proximité géographique et adaptation contexte local.
+            </p>
+          </article>
+          
+          <article class="card">
+            <h3><a href="consultant-devops-aix-en-provence.html" class="service-link">👨‍💻 Consultant DevOps</a></h3>
+            <p>
+              <strong>Consulting et formation</strong> combinés pour un impact maximal. 
+              Transfert de compétences par la pratique sur vos projets réels.
+            </p>
+          </article>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+          <p><strong>Services complémentaires :</strong> 
+            <a href="conseil-devops-sur-mesure.html">Conseil Sur-Mesure</a> | 
+            <a href="support-urgence-devops.html">Support Urgence</a> | 
+            <a href="audit-disponibilite-sla.html">Audit & Optimisation</a>
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>🎯 Planifions votre Montée en Compétences</h2>
+        <p>
+          Échangeons sur vos besoins en formation et construisons ensemble un programme 
+          sur-mesure pour maximiser l'impact sur vos équipes et projets.
+        </p>
+        <a class="button" href="mailto:contact@threeb.fr?subject=Formation%20DevOps%20-%20Demande%20programme%20sur-mesure">
+          📚 Programme Sur-Mesure
+        </a>
+        <p><small>
+          <strong>📍 Formations à Aix-en-Provence ou dans vos locaux PACA</strong><br>
+          Devis gratuit sous 48h • Sessions inter ou intra-entreprise
+        </small></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ThreeB SAS. Tous droits réservés.</p>
+      <nav aria-label="Navigation footer">
+        <a href="/">Accueil</a>
+        <a href="/#services">Services</a>
+        <a href="/#about">À propos</a>
+        <a href="mailto:contact@threeb.fr">Contact</a>
+      </nav>
+    </footer>
+    
+    <!-- Google Analytics - Loaded at end for performance -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TD4YYM76QZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TD4YYM76QZ');
+    </script>
+  </body>
+</html>

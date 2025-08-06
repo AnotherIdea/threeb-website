@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TD4YYM76QZ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-TD4YYM76QZ');
-    </script>
-    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ThreeB – Conseil DevOps & SRE | Infrastructure Cloud Azure AWS | Terraform Ansible</title>
@@ -22,6 +12,16 @@
     <meta name="ICBM" content="43.5297, 5.4474" />
     <meta name="author" content="ThreeB SAS" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#00429b" />
+    <meta name="date" content="2025-08-06" />
+    <meta name="last-modified" content="2025-08-06T15:30:00+01:00" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="static/threeb-logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="static/threeb-logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="static/threeb-logo.png" />
+    <link rel="manifest" href="manifest.json" />
+    
     <link rel="canonical" href="https://threeb.fr/" />
     
     <!-- Open Graph / Facebook -->
@@ -44,7 +44,8 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "LocalBusiness",
+      "@id": "https://threeb.fr/#organization",
       "name": "ThreeB SAS",
       "url": "https://threeb.fr",
       "logo": "https://threeb.fr/static/threeb-logo.png",
@@ -52,9 +53,9 @@
       "foundingDate": "2024",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "",
         "contactType": "customer service",
-        "email": "contact@threeb.fr"
+        "email": "contact@threeb.fr",
+        "availableLanguage": "French"
       },
       "address": {
         "@type": "PostalAddress",
@@ -68,11 +69,8 @@
       "paymentAccepted": "Cash, Credit Card, Bank transfer",
       "currenciesAccepted": "EUR",
       "openingHours": "Mo-Fr 09:00-18:00",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "12"
-      },
+      "hasMap": "https://maps.google.com/?q=Aix-en-Provence,+France",
+      "knowsAbout": ["DevOps", "Site Reliability Engineering", "Infrastructure as Code", "Kubernetes", "CI/CD", "Cloud Computing"],
       "serviceArea": {
         "@type": "GeoCircle",
         "geoMidpoint": {
@@ -164,12 +162,80 @@
           }
         }
       ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "reviewBody": "ThreeB a transformé notre infrastructure en nous accompagnant dans la migration vers le cloud. Leur expertise DevOps nous a permis de gagner en agilité et en fiabilité.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Cédric Becam"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DigitRE Group"
+      },
+      "itemReviewed": {
+        "@type": "Organization",
+        "name": "ThreeB SAS"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "reviewBody": "L'équipe ThreeB a mis en place nos pipelines CI/CD en un temps record. Leur approche pragmatique et leur expertise technique sont remarquables.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Erik de Zeeuw"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DataObserver"
+      },
+      "itemReviewed": {
+        "@type": "Organization",
+        "name": "ThreeB SAS"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "reviewBody": "Grâce à ThreeB, nous avons considérablement amélioré notre observabilité système. Leurs solutions de monitoring nous ont permis de réduire les incidents de 80%.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Richard Morand"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Linxens"
+      },
+      "itemReviewed": {
+        "@type": "Organization",
+        "name": "ThreeB SAS"
+      }
     }
     </script>
 
-    <!-- Font & styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   </head>
 
   <body>
@@ -181,8 +247,8 @@
         <a href="#contact" aria-label="Nous contacter">Contact</a>
       </nav>
       <img src="static/threeb-logo.png" alt="Logo ThreeB - Conseil DevOps et SRE" width="140" height="100" loading="eager" />
-      <h1>Three<span>B</span></h1>
-      <p>DevOps &amp; SRE Expertise — Building Reliable IT Solutions</p>
+      <h1>Expert DevOps &amp; SRE Aix-en-Provence - Three<span>B</span></h1>
+      <p>Infrastructure Cloud, CI/CD, Monitoring — Solutions Fiables pour votre IT</p>
     </header>
 
     <main>
@@ -190,12 +256,32 @@
     <!-- Services -->
     <section id="services">
       <h2>Nos Services</h2>
+      
+      <!-- Hub Pages - Services principaux -->
+      <div style="text-align: center; margin-bottom: 2rem; padding: 1.5rem; background: #f7f9fc; border-radius: 8px;">
+        <h3>🎯 Découvrez nos Domaines d'Expertise</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem;">
+          <a href="services-devops-complets.html" class="service-link" style="background: white; padding: 0.75rem 1.5rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            🏗️ Services DevOps Complets
+          </a>
+          <a href="support-urgence-devops.html" class="service-link" style="background: white; padding: 0.75rem 1.5rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            🚨 Support Urgence 24/7
+          </a>
+          <a href="devops-aix-provence-paca.html" class="service-link" style="background: white; padding: 0.75rem 1.5rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            📍 Expert Local PACA
+          </a>
+          <a href="formation-ressources-devops.html" class="service-link" style="background: white; padding: 0.75rem 1.5rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            🎓 Formation & Ressources
+          </a>
+        </div>
+      </div>
+
       <div class="services-grid">
         <article class="card">
-          <h3><a href="infrastructure-as-code.html" style="color: inherit; text-decoration: none;">Infrastructure as Code (IaC)</a></h3>
+          <h3><a href="infrastructure-as-code.html" class="service-link">Infrastructure as Code (IaC)</a></h3>
           <div class="logos-container">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Logo Terraform - Infrastructure as Code" loading="lazy" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" alt="Logo Ansible - Configuration management" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform Infrastructure as Code expert Aix-en-Provence - ThreeB DevOps" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original.svg" alt="Ansible automation expert Marseille PACA - Configuration management ThreeB" loading="lazy" />
           </div>
           <p>
             Automatisation complète de votre infrastructure avec <strong>Terraform</strong> et <strong>Ansible</strong>. 
@@ -204,11 +290,11 @@
           </p>
         </article>
         <article class="card">
-          <h3><a href="ci-cd-modernes.html" style="color: inherit; text-decoration: none;">CI/CD Modernes</a></h3>
+          <h3><a href="ci-cd-modernes.html" class="service-link">CI/CD Modernes</a></h3>
           <div class="logos-container">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="Logo GitLab - CI/CD Platform" loading="lazy" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" alt="Logo Azure DevOps - Microsoft CI/CD" loading="lazy" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Logo GitHub - Version Control" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab CI/CD expert Aix-en-Provence - Pipeline DevOps ThreeB" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-original.svg" alt="Azure DevOps specialist PACA - Microsoft CI/CD consultant ThreeB" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub Actions expert Marseille - DevOps automation ThreeB" loading="lazy" />
           </div>
           <p>
             Conception et implémentation de pipelines <strong>CI/CD robustes</strong> avec GitLab, Azure DevOps et GitHub Actions. 
@@ -216,11 +302,11 @@
           </p>
         </article>
         <article class="card">
-          <h3><a href="observabilite-monitoring.html" style="color: inherit; text-decoration: none;">Observabilité &amp; Monitoring</a></h3>
+          <h3><a href="observabilite-monitoring.html" class="service-link">Observabilité &amp; Monitoring</a></h3>
           <div class="logos-container">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Logo Prometheus - Monitoring System" loading="lazy" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Logo Grafana - Analytics Platform" loading="lazy" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Logo Elasticsearch - Search Engine" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg" alt="Prometheus monitoring expert Aix-en-Provence - Observabilité ThreeB SRE" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg" alt="Grafana dashboard specialist PACA - Analytics plateforme ThreeB" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch ELK stack expert Marseille - Log monitoring ThreeB" loading="lazy" />
           </div>
           <p>
             Solutions d'<strong>observabilité complète</strong> avec Prometheus, Grafana et la stack ELK. 
@@ -228,10 +314,10 @@
           </p>
         </article>
         <article class="card">
-          <h3><a href="site-reliability-engineering.html" style="color: inherit; text-decoration: none;">Site Reliability Engineering (SRE)</a></h3>
+          <h3><a href="site-reliability-engineering.html" class="service-link">Site Reliability Engineering (SRE)</a></h3>
           <div class="logos-container">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Logo Kubernetes - Container Orchestration" loading="lazy" />
-            <img src="https://avatars.githubusercontent.com/u/609438?s=200&v=4" alt="Logo PagerDuty - Incident Management" style="border-radius: 6px;" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes expert Aix-en-Provence - Container orchestration SRE ThreeB" loading="lazy" />
+            <img src="https://avatars.githubusercontent.com/u/609438?s=200&v=4" alt="PagerDuty incident management PACA - On-call expert ThreeB SRE" style="border-radius: 6px;" loading="lazy" />
           </div>
           <p>
             Implémentation des <strong>pratiques SRE Google</strong> : définition et optimisation des SLA/SLO, 
@@ -239,10 +325,10 @@
           </p>
         </article>
         <article class="card">
-          <h3><a href="architecture-cloud-native.html" style="color: inherit; text-decoration: none;">Architecture Cloud Native</a></h3>
+          <h3><a href="architecture-cloud-native.html" class="service-link">Architecture Cloud Native</a></h3>
           <div class="logos-container">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Logo Microsoft Azure - Cloud Platform" loading="lazy" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="Logo Amazon Web Services - Cloud Computing" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft Azure expert Aix-en-Provence - Cloud architecture ThreeB" loading="lazy" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS cloud expert Marseille PACA - Architecture cloud native ThreeB" loading="lazy" />
           </div>
           <p>
             <strong>Architectures cloud natives</strong> sur Azure et AWS : migration lift-and-shift, refactoring microservices, 
@@ -256,26 +342,50 @@
     <section id="testimonials">
       <h2>Ce que disent nos clients</h2>
       <div class="services-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-quote">
+        <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+          <div class="testimonial-quote" itemprop="reviewBody">
             "ThreeB a transformé notre infrastructure en nous accompagnant dans la migration vers le cloud. Leur expertise DevOps nous a permis de gagner en agilité et en fiabilité."
           </div>
-          <div class="testimonial-author">Cédric Becam</div>
-          <div class="testimonial-company">Responsable de l'infrastructure, DigitRE Group</div>
+          <div class="testimonial-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Cédric Becam</span>
+          </div>
+          <div class="testimonial-company">Responsable de l'infrastructure, <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">DigitRE Group</span></span></div>
+          <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+            <span itemprop="name">ThreeB SAS</span>
+          </div>
+          <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display: none;">
+            <span itemprop="ratingValue">5</span>
+          </div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-quote">
+        <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+          <div class="testimonial-quote" itemprop="reviewBody">
             "L'équipe ThreeB a mis en place nos pipelines CI/CD en un temps record. Leur approche pragmatique et leur expertise technique sont remarquables."
           </div>
-          <div class="testimonial-author">Erik de Zeeuw</div>
-          <div class="testimonial-company">Responsable de l'infrastructure, DataObserver</div>
+          <div class="testimonial-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Erik de Zeeuw</span>
+          </div>
+          <div class="testimonial-company">Responsable de l'infrastructure, <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">DataObserver</span></span></div>
+          <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+            <span itemprop="name">ThreeB SAS</span>
+          </div>
+          <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display: none;">
+            <span itemprop="ratingValue">5</span>
+          </div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-quote">
+        <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+          <div class="testimonial-quote" itemprop="reviewBody">
             "Grâce à ThreeB, nous avons considérablement amélioré notre observabilité système. Leurs solutions de monitoring nous ont permis de réduire les incidents de 80%."
           </div>
-          <div class="testimonial-author">Richard Morand</div>
-          <div class="testimonial-company">Digital Solution Manager, Linxens</div>
+          <div class="testimonial-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span itemprop="name">Richard Morand</span>
+          </div>
+          <div class="testimonial-company">Digital Solution Manager, <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Linxens</span></span></div>
+          <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+            <span itemprop="name">ThreeB SAS</span>
+          </div>
+          <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display: none;">
+            <span itemprop="ratingValue">5</span>
+          </div>
         </div>
       </div>
     </section>
@@ -285,9 +395,9 @@
       <h2>À propos de ThreeB</h2>
       <p>
         ThreeB est une société de conseil spécialisée dans la transformation
-        DevOps et la fiabilité des systèmes. Nous accompagnons les équipes IT
-        dans la conception, l'industrialisation et l'exploitation
-        d'infrastructures robustes, scalables et sécurisées.
+        <a href="consultant-devops-aix-en-provence.html">DevOps</a> et la <a href="site-reliability-engineering.html">fiabilité des systèmes</a>. 
+        Nous accompagnons les équipes IT dans la conception, l'industrialisation et l'exploitation
+        d'<a href="infrastructure-as-code.html">infrastructures</a> robustes, scalables et sécurisées.
       </p>
     </section>
 
@@ -295,9 +405,11 @@
     <section id="why">
       <h2>Pourquoi nous choisir&nbsp;?</h2>
       <ul>
-        <li><strong>Expertise reconnue&nbsp;:</strong> plus de 10 ans d’expérience dans le cloud et l’automatisation.</li>
+        <li><strong>Expertise reconnue&nbsp;:</strong> plus de 10 ans d'expérience dans le cloud et l'automatisation.</li>
         <li><strong>Approche pragmatique&nbsp;:</strong> des solutions adaptées à votre contexte et à vos contraintes.</li>
-        <li><strong>Culture de l’amélioration continue&nbsp;:</strong> nous partageons nos savoir-faire pour rendre vos équipes autonomes.</li>
+        <li><strong>Culture de l'amélioration continue&nbsp;:</strong> nous partageons nos savoir-faire pour rendre vos équipes autonomes.</li>
+        <li><strong>Support d'urgence&nbsp;:</strong> intervention <a href="urgence-sre.html">24/7 pour incidents critiques</a> avec garantie de réponse.</li>
+        <li><strong>Présence locale&nbsp;:</strong> <a href="consultant-devops-aix-en-provence.html">experts basés à Aix-en-Provence</a> pour la région PACA.</li>
       </ul>
     </section>
 
@@ -312,15 +424,15 @@
       </article>
       <article>
         <h3>Quels sont les bénéfices d'Infrastructure as Code ?</h3>
-        <p>L'IaC avec Terraform et Ansible permet de réduire les erreurs de déploiement de 80%, 
+        <p>L'<a href="infrastructure-as-code.html">IaC avec Terraform et Ansible</a> permet de réduire les erreurs de déploiement de 80%, 
            d'accélérer les mises en production et de garantir la reproductibilité des environnements 
            de développement, test et production.</p>
       </article>
       <article>
         <h3>Pourquoi choisir ThreeB pour votre projet cloud ?</h3>
-        <p>Notre expertise couvre Azure et AWS avec des certifications officielles. Nous maîtrisons 
+        <p>Notre expertise couvre <a href="architecture-cloud-native.html">Azure et AWS</a> avec des certifications officielles. Nous maîtrisons 
            l'architecture cloud-native, l'optimisation des coûts et les bonnes pratiques sécuritaires 
-           pour des migrations réussies.</p>
+           pour des migrations réussies. Découvrez notre <a href="agence-cloud-provence.html">agence cloud spécialisée en Provence</a>.</p>
       </article>
     </section>
 
@@ -344,5 +456,14 @@
         <a href="mailto:contact@threeb.fr">Contact</a>
       </nav>
     </footer>
+    
+    <!-- Google Analytics - Loaded at end for performance -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TD4YYM76QZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TD4YYM76QZ');
+    </script>
   </body>
 </html>

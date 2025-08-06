@@ -1,0 +1,17 @@
+{
+  "name": "ThreeB - Expert DevOps & SRE Aix-en-Provence",
+  "short_name": "ThreeB",
+  "description": "Expert DevOps & SRE pour votre transformation digitale",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f9fc",
+  "theme_color": "#00429b",
+  "icons": [
+    {
+      "src": "static/threeb-logo.png",
+      "sizes": "140x100",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
